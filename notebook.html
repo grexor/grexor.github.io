@@ -1,0 +1,64 @@
+<!--#include file="header.hidden" -->
+
+<script>
+  $("#link_notebook").css("background-color", "#cacaca");
+</script>
+
+  <div class="container">
+    <br>
+    <p class="font-weight-light">
+    <i class="fas fa-book-reader"></i>&nbsp;<strong>Notebook</strong>: for all those technical problems that I keep solving, however they keep showing up: pro-memoria
+    <div style='padding-left: 5px;'>
+      <!--
+      <a href="#201911">November 2019</a><br>
+      <a href="#201910">October 2019</a><br>
+      <a href="#201909">September 2019</a><br>
+      <a href="#201908">August 2019</a><br>
+      <a href="#201907">July 2019</a><br>
+      <a href="#201906">June 2019</a><br>
+      <a href="#201905">May 2019</a><br>
+      -->
+    </div>
+
+    <p class="font-weight-light">
+    <i class="far fa-hand-point-right"></i>&nbsp;git status hangs, if you have several untracked files
+    <div style='padding-left: 21px;'>
+<pre>
+git status -uno
+git commit -a -uno
+</pre>
+    </div>
+
+    <p class="font-weight-light">
+    <i class="far fa-hand-point-right"></i>&nbsp;Apache authentication with folder listing
+    <div style="padding-left: 15px;">
+      <p class="font-weight-light">
+      First create new file containing username and password:
+<pre class="prettyprint">
+htpasswd -c filename username</pre>
+<p class="font-weight-light">
+      Then allow .htaccess to override directory options:
+<pre class="prettyprint">
+&lt;Directory /var/www/folder&gt;
+Options Indexes FollowSymLinks
+AllowOverride all
+Order allow,deny
+allow from all
+&lt;/Directory&gt;</pre>
+<p class="font-weight-light">
+        And lastly, put a .htaccess inside your folder:
+<pre class="prettyprint">
+AuthType Basic
+AuthName "Name"
+AuthBasicProvider file
+AuthUserFile /path/to/pass_file
+Require user username
+IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* SuppressHTMLPreamble</pre>
+
+</div>
+
+
+
+  </div>
+
+<!--#include file="footer.hidden" -->

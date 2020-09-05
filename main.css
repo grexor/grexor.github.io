@@ -1,0 +1,121 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  color: #333333;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.navbar {
+  background:#ffffff;
+  margin: auto;
+  margin: 0px !important;
+  padding: 0px !important;
+  padding-right: 20px !important;
+  text-shadow: 0px 0px;
+  border-bottom: 1px dashed #e1e1e1;
+}
+
+.navbar a {
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #333333;
+  cursor: pointer;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  background-color: #cccccc;
+}
+
+nav .navbar-nav li a{
+  color: #333333 !important;
+}
+
+nav .navbar-nav li a:hover{
+  color: #770000 !important;
+}
+
+.navbar-default .navbar-brand a {
+  color: #000000 !important;
+}
+
+.navbar-brand.custom {
+  padding-left: 5px !important;
+  padding-right: 0px !important;
+  white-space: nowrap;
+  color: #333333 !important;
+  font-size: 18px;
+}
+
+.navbar-brand.custom:hover {
+  color: #777777 !important;
+  text-decoration: none;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.blockquote {
+  font-size: 16px;
+}
+
+.container a {
+  color: #4477b2 !important;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: #4477b2 !important;
+  text-decoration: underline;
+}
+
+.middle {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+}
+
+.middle button {
+ border:1px solid #F97300;
+ background: #cc5555;
+ color: #fff;
+}
+
+.middle a {
+  text-decoration: none;
+  color: #cacaca;
+}
+
+.footer a {
+  color: #4477b2;
+  text-decoration: none;
+}
+
+
+/* change navbar-toggler inside lines color (stroke) */
+.navbar-light span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='yellow' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: white;
+}
+/* change hamburger button border color */
+button.navbar-toggler.navbar-toggler-right {
+  border-color: yellow;
+}
+/* change navbar background on collapse */
+@media (max-width: 768px) {
+  nav.navbar {
+    background: lightgray;
+  }
+}
