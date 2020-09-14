@@ -1,11 +1,5 @@
 User-agent: *
 Sitemap: http://www.rotlab.info/sitemap.xml
-Disallow: /alan_turing.pdf
-Disallow: /index2.html
-Disallow: /header.hidden
-Disallow: /footer.hidden
-Disallow: /archive
-Disallow: /README.md
 Disallow: /notebook.html
 Disallow: /notebooks/*
 Disallow: /notebooks
@@ -15,7 +9,3 @@ Disallow: /blogs/*
 Disallow: /blog
 Disallow: /blog.html
 Disallow: /blog*
-Disallow: /v2*
-Disallow: /v2/*
-Disallow: /old
-Disallow: /old/*
