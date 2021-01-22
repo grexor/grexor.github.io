@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: http://www.rotlab.info/sitemap.xml
+Sitemap: https://grexor.github.io/sitemap.xml
 Disallow: /notebook.html
 Disallow: /notebooks/*
 Disallow: /notebooks
