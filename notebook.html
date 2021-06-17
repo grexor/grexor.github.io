@@ -70,7 +70,8 @@
 <pre>
 while IFS=$'\t' read -r -a line
 do
-   echo ${line[0]} ${line[1]} ${line[2]} # field1, field2, field3 from runs.tab line
+  line=${line%$'\r'} # make sure to remove "\r"
+  echo ${line[0]} ${line[1]} ${line[2]} # field1, field2, field3 from runs.tab line
 done < "runs.tab"
 </pre>
     </div>   
