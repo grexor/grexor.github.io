@@ -70,7 +70,7 @@
 <pre>
 while IFS=$'\t' read -r -a line
 do
-  line=${line%$'\r'} # make sure to remove "\r"
+  line=${line%$'\r'} # make sure to remove "\r", https://stackoverflow.com/questions/34951901/percent-symbol-in-bash-whats-it-used-for
   echo ${line[0]} ${line[1]} ${line[2]} # field1, field2, field3 from runs.tab line
 done < "runs.tab"
 </pre>
