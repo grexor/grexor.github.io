@@ -65,6 +65,17 @@
     </div>
 
     <p class="font-weight-light">
+    <i class="far fa-hand-point-right"></i>&nbsp;bash iterate line per line from text file, split by tab
+    <div style='padding-left: 21px;'>
+<pre>
+while IFS=$'\t' read -r -a line
+do
+   echo ${line[0]} ${line[1]} ${line[2]} # field1, field2, field3 from runs.tab line
+done < "runs.tab"
+</pre>
+    </div>   
+
+    <p class="font-weight-light">
     <i class="far fa-hand-point-right"></i>&nbsp;replace comma by tab in text files
     <div style='padding-left: 21px;'>
 <pre>
