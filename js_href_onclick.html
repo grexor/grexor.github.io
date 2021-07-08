@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="keywords" content="gregor, rot, expressrna, microbeatlas, iclip, bioinformatics, gregor rot"/>
+  <meta name="description" content="My research focuses on bioinformatics analysis of RNA, post-transcriptional modifications analysis, namely alternative splicing and alternative polyadenylation in connection with protein-RNA binding CLIP data. Lately i am exploring new possibilities with single-cell and long-read sequence data. My passion is also making scientific analysis available over nice web applications, such as expressRNA.org"/>
+  <title>Gregor Rot &#8211; Computer Science and Bioinformatics</title>
+  <meta name="robots" content="noarchive">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gregor Rot" />
+  <meta property="og:description" content="RNA Bioinformatics" />
+  <meta property="og:url" content="https://grexor.github.io" />
+  <meta property="og:site_name" content="Gregor Rot Bioinformatics" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="icon" type="image/png" href="/img/rotlab_logo.png">
+
+  <!-- font awesome -->
+  <link href="/fontawesome/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar navbar-expand-md">
+    <a class="navbar-brand custom" href="/"><i class="far fa-smile-wink"></i></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" id="link_philosophy" href="philosophy.html"><i class="fas fa-mountain"></i>&nbsp;Philosophy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="link_publications" href="publications.html"><i class="far fa-newspaper"></i>&nbsp;Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="link_software" href="software.html"><i class="fas fa-file-code"></i>&nbsp;Software</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="link_blog" href="blog.html"><i class="fas fa-blog"></i>&nbsp;Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="link_notebook" href="notebook.html"><i class="fas fa-book-reader"></i>&nbsp;Notebook</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script>
+  $("#link_blog").css("background-color", "#cacaca");
+</script>
+
+  <div class="container">
+    <br>
+    <p class="font-weight-light">
+    <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Javascript: href, onclick and command-click</b>
+    <div style='padding-left: 5px; font-weight: 100'>
+      <i class="far fa-dot-circle"></i>&nbsp;Javascript functions and links
+      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+        When you develop a web page with JQuery and Javascript, you probably have several places on the page where you have to connect javascript function links to text or images. Suppose you have a simple javascript function defined:
+<br><br>
+<pre>
+  function open_data(event) {
+    alert("Open data tab");
+  }
+</pre>
+        And now you would like this function open_data (which will show/hide some div or something in this direction) to trigger when you click on a link. You could do something like this:
+<xmp><a href="javascript:open_data(event);">Open Data</a></xmp>
+        When you click on this link, the function open_data is called. This is all good. However, when you mouse-over the "Open Data" text, you will see the link displayed as "javascript:open_data(event)". However, what about opening the data in a new window or sending the link to the data to someone via URL?
+        
+      </div>
+
+      <br>
+
+      <i class="far fa-dot-circle"></i>&nbsp;expressRNA example
+      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      If you look at the list of <a href='http://www.expressrna.org/index.html?action=libraries' target=_new>libraries in expressRNA</a>, you can see each library is represented by a unique URL (href, mouse over to see the link). So opening the "example" library is possible using the direct URL <a href='https://expressrna.org/index.html?action=library&library_id=example' target=_new>https://expressrna.org/index.html?action=library&library_id=example</a>.
+      <br><br>
+      However, when you click on the example library link inside the expressRNA webapp, this does not redirect the browser to the new URL. This would be too heavy. Instead, a javascript function is triggered, which directly shows you the data without reloading the web page (hides some div elements and loads content into the library div element). At the same time, you can right-click on the example library link and "Open in new tab" in the browser or Command-Click on Mac/Windows to open in new tab. This then opens a new window, and reloads the whole expressRNA webapp with the correct data displayed (example library).
+      </div>
+
+      <br>
+
+      <i class="far fa-dot-circle"></i>&nbsp;How do you achieve the behaviour where command-clicking on a link opens the link URL (href) and simply clicking on a link runs a javascript function?
+      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+
+        The first idea is to do something like this:
+<xmp><a href="https://expressRNA.org/data" onclick:open_data(event); return false;">Open Data</a></xmp>
+
+        This works great. If you click on the link, the javascript function "open_data" is run. If you right-click and "Open in new tab", the URL "expressRNA.org/data" is open in a new tab. However, if you command-click the link, the thingy doesn't work as expected.
+        You need a little bit more logic in the open_data function to catch the command-click events to make it really really nice for the user.
+
+<xmp>function open_data(event, url) {
+  if (event.ctrlKey || event.metaKey) {
+    window.open(url);
+  } else {
+    alert("Open data tab");
+  }
+}
+
+<a href="https://expressRNA.org/data" onclick:open_data(event, 'https://expressRNA.org/data'); return false;"></a>
+</xmp>
+
+      And voila. You now have links on your web page that trigger a javascript function when you click them. Still, you can attach a URL to the link (href), where if you "Open in new tab" or command-click the link, a new browser tab is open and the URL is loaded. This is super essential for web apps sharing data, since you would like, for example, to open several analysis and libraries (expressRNA) in different browser tabs, which you would also like to share with colleagues via the URL links.
+
+      <br><br><b><font color=green>Thanks for reading! and if it was helpful for you, leave a comment below.</font></b>
+
+    </div>
+
+    <br>
+
+    <i class="far fa-dot-circle"></i>&nbsp;References: <a href='https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window' target=_new>Stackoverflow Open a URL in a new tab</a>
+
+    <br><br>
+
+    <div id="disqus_thread"></div>
+    <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    var disqus_config = function () {
+    this.page.title = "zzzzz";
+    this.page.url = "https://grexor.github.io/js_href_onclick.html";
+    this.page.identifier = "blog_js_href_onclick";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://grexor.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38680782-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-38680782-6');
+  </script>
+
+  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
+    <center>
+
+      <a href="https://twitter.com/gregor_rot"><i class="fab fa-twitter"></i>&nbsp;Follow me on Twitter</a>
+      &nbsp;&nbsp;
+      <i class="fas fa-hiking"></i>
+      &nbsp;&nbsp;
+      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+    </center>
+  </div>
+
+  </body>
+  </html>
