@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" href="/img/rotlab_logo.png">
 
   <!-- font awesome -->
-  <link href="/fontawesome/css/all.css" rel="stylesheet">
+  <link href="fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body>
 
@@ -76,16 +76,16 @@ do
   echo ${line[0]} ${line[1]} ${line[2]} # field1, field2, field3 from runs.tab line
 done < "runs.tab"
 </pre>
-    </div>   
+    </div>
 
     <p class="font-weight-light">
     <i class="far fa-hand-point-right"></i>&nbsp;replace comma by tab in text files
     <div style='padding-left: 21px;'>
 <pre>
-sed 's/\,/\t/g' file.csv    
+sed 's/\,/\t/g' file.csv
 </pre>
-    </div>   
-    
+    </div>
+
     <p class="font-weight-light">
     <i class="far fa-hand-point-right"></i>&nbsp;git status hangs, if you have several untracked files
     <div style='padding-left: 21px;'>

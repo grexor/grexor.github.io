@@ -11,10 +11,10 @@ XBitHack On
   </ifModule>
 </filesMatch>
 
-RewriteEngine on 
-RewriteBase /
-RewriteRule "^notebook$" "/notebook.html" [NC] [PT]
-RewriteRule "^blog$" "/blog.html" [NC] [PT]
-RewriteRule "^blog_201905$" "/blog_201905.html" [NC] [PT]
-RewriteRule "^blog_201906$" "/blog_201906.html" [NC] [PT]
-RewriteRule "^blog_201907$" "/blog_201907.html" [NC] [PT]
+#RewriteEngine on 
+#RewriteBase /
+#RewriteRule "^notebook$" "/notebook.html" [NC] [PT]
+#RewriteRule "^blog$" "/blog.html" [NC] [PT]
+#RewriteRule "^blog_201905$" "/blog_201905.html" [NC] [PT]
+#RewriteRule "^blog_201906$" "/blog_201906.html" [NC] [PT]
+#RewriteRule "^blog_201907$" "/blog_201907.html" [NC] [PT]
