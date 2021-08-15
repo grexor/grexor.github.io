@@ -1,11 +1,2 @@
 User-agent: *
 Sitemap: https://grexor.github.io/sitemap.xml
-Disallow: /notebook.html
-Disallow: /notebooks/*
-Disallow: /notebooks
-Disallow: /notebook
-Disallow: /blogs
-Disallow: /blogs/*
-Disallow: /blog
-Disallow: /blog.html
-Disallow: /blog*
