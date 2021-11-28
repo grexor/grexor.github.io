@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="keywords" content="gregor, rot, expressrna, microbeatlas, iclip, bioinformatics, gregor rot"/>
   <meta name="description" content="My research focuses on bioinformatics analysis of RNA, post-transcriptional modifications analysis, namely alternative splicing and alternative polyadenylation in connection with protein-RNA binding CLIP data. Lately i am exploring new possibilities with single-cell and long-read sequence data. My passion is also making scientific analysis available over nice web applications, such as expressRNA.org"/>
-  <title>Gregor Rot &#8211; Computer Science and Bioinformatics</title>
+  <title>Mysql insert binary data from TAB files | Gregor Rot &#8211; Computer Science and Bioinformatics</title>
   <meta name="robots" content="noarchive">
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gregor Rot" />
@@ -58,72 +58,91 @@
   $("#link_blog").css("background-color", "#cacaca");
 </script>
 
-<style>
-
-.circle {
-  background: #f1f1f1;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border: 1px solid #0F1C3F;
-  border-radius: 10px;
-  height: 22px;
-  font-size: 14px;
-  box-shadow: 2px 2px 0 0 rgba(15, 28, 63, 0.125);
-  float: left;
-  user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-}
-
-</style>
-
   <div class="container">
     <br>
     <p class="font-weight-light">
-    <i class="fas fa-blog"></i>&nbsp;<strong>Blog</strong>: writings about research I am currently working on and software engineering challenges, and once in a while life events
-    <div style='padding-left: 5px;'>
+    <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Mysql insert binary data from TAB files</b>
+    <div style='padding-left: 5px; font-weight: 100'>
+      <i class="far fa-dot-circle"></i>&nbsp;Motivation
+      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+        We are working with a lot of data for the <a href="https://microbeatlas.org" target=_new>microbeAtlas.org</a> project and we keep part of it (that needs to be text searchable) in a Mysql database. Alongside this data, we also would like to keep JSON objects that are large to some extend, and we compress them and store them in a binary form.
+      </div>
 
-      <i class="fas fa-book-reader" style='float:left; margin-top: 3px'></i><div class=circle>tech</div><a href="mysql_binary.html">Mysql insert binary data from TAB files</a><br>
-      <footer class="blockquote-footer">November 2021, Zürich</footer>
+<br>
 
-      <br>
+      <i class="far fa-dot-circle"></i>&nbsp;Preparing data in TAB files
+      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+        Turns out the fastest way to populate a Mysql table is to load the data from a TAB file. Storing numbers and text in a text file is simple, however how do you store binary data and load it into Mysql? Turns out you need to use something like hexlify, so to represent the binary data in hex format, which can be stored as text. Let's look at how you would do that in Python:
+<br><br>
+<pre>
+import zlib
+import binascii
 
-      <!--
-      <i class="fas fa-book-reader" style='float:left; margin-top: 3px'></i><div class=circle>tech</div><a href="febe.html">Webapp development setup for front+back-end with mod_wsgi, python and jQuery</a><br>
-      <footer class="blockquote-footer">October 2021, Zürich</footer>
+# compression and storage
+my_data = "Some data I would like to compress and store as binary in hex format."
+my_data_compressed = zlib.compress(my_data.encode())
+my_data_compressed_hex = binascii.hexlify(my_data_compressed)
 
-      <br>
-      -->
+# write the data to the file
+f = open("data.tab", "wt")
+f.write("column1\tcolumn2\t%s" % my_data_compressed_hex)
+</pre>
+        Ekola, you would have now the data in a TAB delimited file (one line per row).
+</div>
 
-      <i class="fas fa-book-reader" style='float:left; margin-top: 3px'></i><div class=circle>life</div><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a><br>
-      <footer class="blockquote-footer">August 2021, Zürich</footer>
+<br>
 
-      <br>
+<i class="far fa-dot-circle"></i>&nbsp;Loading (storing) data into Mysql tables
+<div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+        How to store and load into Mysql? You would create a sql file in this direction:
+        <br><br>
+<pre>
+DROP TABLE IF EXISTS my_table;
+CREATE TABLE `my_table` (
+	  `column_1` varchar(255) NOT NULL,
+	  `column_2` text,
+	  `column_3` LONGBLOB
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-      <i class="fas fa-book-reader" style='float:left; margin-top: 3px'></i><div class=circle>tech</div><a href="js_href_onclick.html">Javascript: href, onclick and command-click</a><br>
-      <footer class="blockquote-footer">July 2021, Zürich</footer>
+LOAD DATA LOCAL INFILE "data.tab" INTO TABLE my_table FIELDS TERMINATED BY '\t' \
+(column_1, column_2, @column_3_val) SET column_3 = UNHEX(@column_3_val);
+</pre>
 
+  Notice the UNHEX for the column_3 field, since we need to store in binary and not in hex strings. Voila.
+      </div>
 
-      <!--
-      <i class="fas fa-cubes"></i>&nbsp;<a href="polyatlas.html">polyAtlas: how to extract RNA molecule ends from direct-RNA Nanopore data</a><br>
-      <footer class="blockquote-footer">September 2020, Zürich</footer>
-      -->
-
-      <!--
-      <i class="fas fa-cubes"></i>&nbsp;<a href="polyatlas.html">polyAtlas: how to extract RNA molecule ends from direct-RNA Nanopore data</a><br>
-      <footer class="blockquote-footer">September 2020, Zürich</footer>
-      -->
+      <br><b><font color=green>Thanks for reading! and if it was helpful for you, leave a comment below.</font></b>
 
     </div>
-  </div>
 
+    <br>
+
+    <i class="far fa-dot-circle"></i>&nbsp;References: <a href='https://stackoverflow.com/questions/12038814/import-hex-binary-data-into-mysql' target=_new>Stackoverflow: Import hex/binary data into mysql</a>
+
+    <br><br>
+
+    <div id="disqus_thread"></div>
+    <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    var disqus_config = function () {
+    this.page.title = "JS";
+    this.page.url = "https://grexor.github.io/mysql_binary.html";
+    this.page.identifier = "blog_febe";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://grexor.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38680782-6"></script>
