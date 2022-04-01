@@ -26,6 +26,10 @@
 </head>
 <body>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+
 <div class="container">
   <nav class="navbar navbar-expand-md">
     <a class="navbar-brand custom" href="/"><i class="far fa-smile-wink"></i></a>
@@ -60,18 +64,18 @@
 
   <div class="container">
     <br>
-    <p class="font-weight-light">
-    <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Mysql insert binary data from TAB files</b>
-    <div style='padding-left: 5px; font-weight: 100'>
+    <p class="font-weight-light" style='font-weight: 500; font-size: 16px; color: #000000;'>
+      <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Mysql insert binary data from TAB files</b>
+    <div style='padding-left: 5px;'>
       <i class="far fa-dot-circle"></i>&nbsp;Motivation
-      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      <div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
         We are working with a lot of data for the <a href="https://microbeatlas.org" target=_new>microbeAtlas.org</a> project and we keep part of it (that needs to be text searchable) in a Mysql database. Alongside this data, we also would like to keep JSON objects that are large to some extend, and we compress them and store them in a binary form.
       </div>
 
 <br>
 
       <i class="far fa-dot-circle"></i>&nbsp;Preparing data in TAB files
-      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      <div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
         Turns out the fastest way to populate a Mysql table is to load the data from a TAB file. Storing numbers and text in a text file is simple, however how do you store binary data and load it into Mysql? Turns out you need to use something like hexlify, so to represent the binary data in hex format, which can be stored as text. Let's look at how you would do that in Python:
 <br><br>
 <pre>
@@ -93,7 +97,7 @@ f.write("column1\tcolumn2\t%s" % my_data_compressed_hex)
 <br>
 
 <i class="far fa-dot-circle"></i>&nbsp;Loading (storing) data into Mysql tables
-<div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+<div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
         How to store and load into Mysql? You would create a sql file in this direction:
         <br><br>
 <pre>

@@ -26,6 +26,10 @@
 </head>
 <body>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>  
+
 <div class="container">
   <nav class="navbar navbar-expand-md">
     <a class="navbar-brand custom" href="/"><i class="far fa-smile-wink"></i></a>
@@ -60,11 +64,11 @@
 
   <div class="container">
     <br>
-    <p class="font-weight-light">
-    <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Javascript: href, onclick and command-click</b>
-    <div style='padding-left: 5px; font-weight: 100'>
+    <p class="font-weight-light" style='font-weight: 500; font-size: 16px; color: #000000;'>
+      <i class="fas fa-cubes"></i>&nbsp;&nbsp;<b>Javascript: href, onclick and command-click</b>
+    <div style='padding-left: 5px;'>
       <i class="far fa-dot-circle"></i>&nbsp;Javascript functions and links
-      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      <div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
         When you develop a web page with JQuery and Javascript, you probably have several places on the page where you have to connect javascript function links to text or images. Suppose you have a simple javascript function defined:
 <br><br>
 <pre>
@@ -81,7 +85,7 @@
       <br>
 
       <i class="far fa-dot-circle"></i>&nbsp;expressRNA example
-      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      <div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
       If you look at the list of <a href='http://www.expressrna.org/index.html?action=libraries' target=_new>libraries in expressRNA</a>, you can see each library is represented by a unique URL (href, mouse over to see the link). So opening the "example" library is possible using the direct URL <a href='https://expressrna.org/index.html?action=library&library_id=example' target=_new>https://expressrna.org/index.html?action=library&library_id=example</a>.
       <br><br>
       However, when you click on the example library link inside the expressRNA webapp, this does not redirect the browser to the new URL. This would be too heavy. Instead, a javascript function is triggered, which directly shows you the data without reloading the web page (hides some div elements and loads content into the library div element). At the same time, you can right-click on the example library link and "Open in new tab" in the browser or Command-Click on Mac/Windows to open in new tab. This then opens a new window, and reloads the whole expressRNA webapp with the correct data displayed (example library).
@@ -90,7 +94,7 @@
       <br>
 
       <i class="far fa-dot-circle"></i>&nbsp;How do you achieve the behaviour where command-clicking on a link opens the link URL (href) and simply clicking on a link runs a javascript function?
-      <div style='padding-left: 20px; font-weight: 100; padding-top: 4px; text-align: justify'>
+      <div style='padding-left: 20px; padding-top: 4px; text-align: justify'>
 
         The first idea is to do something like this:
 <xmp><a href="https://expressRNA.org/data" onclick:open_data(event); return false;">Open Data</a></xmp>
