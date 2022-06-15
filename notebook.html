@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gregor Rot" />
   <meta property="og:description" content="RNA Bioinformatics" />
-  <meta property="og:url" content="https://rotlab.info" />
+  <meta property="og:url" content="https://grexor.github.io" />
   <meta property="og:site_name" content="Gregor Rot" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css">
-  <link rel="icon" type="image/png" href="/img/rotlab_logo.png">
 
   <!-- font awesome -->
   <link href="fontawesome/css/all.css" rel="stylesheet">
@@ -77,6 +76,21 @@
     <p class="font-weight-light">
     <i class="fas fa-book-reader"></i>&nbsp;<strong>Notebook</strong>: for all those technical problems that I keep solving, however they keep showing up: pro-memoria
     <div style='padding-left: 5px;'>
+    </div>
+
+    <p class="font-weight-light">
+      <i class="far fa-hand-point-right"></i>&nbsp;.screenrc
+      <div style='padding-left: 21px;'>
+      <p class="font-weight-light">
+<pre>
+  vbell off
+  hardstatus alwayslastline
+  hardstatus string '%{gk}%{G}%H%{g}%= %{wk}%?%-Lw%?%{=b kW}%n*%f %t%?(%u)%?%{= kw}%?%+Lw%?%?%= %{g}%{Y}%l%{g}%{=b C} %c%{W}'
+  autodetach on # Autodetach session on hangup instead of terminating screen completely
+  startup_message off # Turn off the splash screen
+  defscrollback 30000 # Use a 30000-line scrollback buffer
+  termcapinfo xterm* ti@:te@  
+</pre>
     </div>
 
     <p class="font-weight-light">
