@@ -9,10 +9,9 @@ body {
 
 .navbar {
   background:#ffffff;
-  margin: auto;
   margin: 0px !important;
   padding: 0px !important;
-  padding-right: 20px !important;
+  padding-right: 0px !important;
   text-shadow: 0px 0px;
   border-bottom: 1px dashed #e1e1e1;
 }
@@ -49,8 +48,9 @@ nav .navbar-nav li a:hover{
 }
 
 .navbar-brand.custom {
-  padding-left: 5px !important;
+  padding-left: 0px !important;
   padding-right: 0px !important;
+  margin-left: -8px !important;
   white-space: nowrap;
   color: #333333 !important;
   font-size: 18px;
