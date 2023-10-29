@@ -2,74 +2,52 @@
 <html lang="en">
 <head>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <meta charset="utf-8">
-  <meta name="keywords" content="gregor, rot, expressrna, microbeatlas, iclip, bioinformatics, gregor rot"/>
-  <meta name="description" content="My research focuses on bioinformatics analysis of RNA, post-transcriptional modifications analysis, namely alternative splicing and alternative polyadenylation in connection with protein-RNA binding CLIP data. Lately i am exploring new possibilities with single-cell and long-read sequence data. My passion is also making scientific analysis available over nice web applications, such as expressRNA.org"/>
-  <title>splicekit | Gregor Rot &#8211; Computer Science and Bioinformatics</title>
+  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
+  <title>Gregor Rot &#8211; Bioinformatics</title>
   <meta name="robots" content="noarchive">
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="RNA Bioinformatics" />
+  <meta property="og:description" content="Bioinformatics" />
   <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot Bioinformatics" />
+  <meta property="og:site_name" content="Gregor Rot" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="main.css">
 
-  <!-- font awesome -->
-  <link href="fontawesome/css/all.css" rel="stylesheet">
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-714JBVJZEV');
+  </script>
+    
 </head>
 <body>
 
-  <div class="container">
-    <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand custom" href="/"><font style='font-size:16px'><b>Gregor</b> Rot</font></a><i class="far fa-smile-wink"></i>
-      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="main-navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" id="link_philosophy" href="philosophy.html"><i class="fas fa-mountain"></i>&nbsp;Philosophy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="link_publications" href="publications.html"><i class="far fa-newspaper"></i>&nbsp;Publications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="link_software" href="software.html"><i class="fas fa-file-code"></i>&nbsp;Software</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="link_blog" href="blog.html"><i class="fas fa-blog"></i>&nbsp;Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="link_notebook" href="notebook.html"><i class="fas fa-book-reader"></i>&nbsp;Notebook</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+<div style="max-width: 600px !important; margin: 0 auto;">
   
-<script>
-  $("#link_blog").css("background-color", "#cacaca");
-</script>
+  <br>
+  <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
 
-  <div class="container">
-    <br>
-    <p class="font-weight-light" style='color: #000000; font-weight: 100; font-size: 15px;'>
-    <i class="fas fa-cubes"></i>&nbsp;&nbsp;splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data
-    <div style='padding-left: 5px;'>
-    <div style='padding-left: 20px; padding-top: 4px; text-align: justify; max-width:700px;'>
+  <br><br>
+
+
+    <b>splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</b>
+    <br><br>
       <p class="font-weight-light" style='font-size: 14px; color: #000000;'>
       In July 2022 I joined Roche in Basel, Switzerland, being part of a group of scientists working on research and development of small molecules that change splicing patterns and could potentially become novel drugs. One part of the work is doing lots of short-read RNA-seq splicing analysis to see how diverse molecules actually change splicing in a genome-wide context.
       <br><br>
 
       For this, we are developing <b>splicekit</b>, a platform that identifies targets (exons) that undergo splicing changes. Below a few slides and details on how the analysis and visualizations look like. This is a small part of what we do and that I can share outside of Roche.<br><br>
 
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqpigEcAoH3CvYnglpjgAtJm4dLc77ZBaGQ4CsShFPgEizLduYpZpmdTNnJHnjTb172F1kvoAZCris/embed?start=false&loop=false&delayms=3000" frameborder="0" width="680" height="419" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqpigEcAoH3CvYnglpjgAtJm4dLc77ZBaGQ4CsShFPgEizLduYpZpmdTNnJHnjTb172F1kvoAZCris/embed?start=false&loop=false&delayms=3000" frameborder="0" width="600" height="419" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
       <br><br>
       Small molecules splicing modulators are becoming a thing in drug development and could present novel and important opportunities to alleviate and cure diverse diseases (<a href='https://www.nature.com/articles/s41429-021-00450-1' target=_new>Schneider-Poetsch et al, 2021</a>). In fact Roche put to market the first FDA approved splicing modulator drug <b>risdiplam</b> (<a href='https://pubs.acs.org/doi/10.1021/acs.jmedchem.8b00741' target=_new>Ratni et al., 2018</a>) to treat spinal muscular atrophy.
@@ -86,29 +64,22 @@
 
       <br><br><font color=gray>Thanks for reading and if it was helpful to you, leave a comment below.</font>
 
-    </div>
-
+  <br><br>
+    <b>References</b>
     <br>
-
-    <i class="far fa-dot-circle"></i>&nbsp;References
-    <br>
-
-    <div style='padding-left: 15px; padding-top: 5px;'>
-    
-      <div style='font-weight:100; font-size: 13px; color: #000000; text-indent: -20px; padding-left: 40px; padding-top: 4px; text-align: justify; max-width:700px;'>
+  
+      <div style='font-weight:100; font-size: 13px; color: #000000; text-indent: -20px; padding-left: 20px; padding-top: 4px; text-align: justify; max-width:700px;'>
       <i class="far fa-newspaper"></i>&nbsp;Ratni, H., Ebeling, M., Baird, J., Bendels, S., Bylund, J., Chen, K. S., Denk, N., Feng, Z., Green, L., Guerard, M., Jablonski, P., Jacobsen, B., Khwaja, O., Kletzl, H., Ko, C. P., Kustermann, S., Marquet, A., Metzger, F., Mueller, B., Naryshkin, N.A., Paushkin S.V., Pinard, E., Poirier, A., Reutlinger, M., Weetall, M., Zeller, A., Zhao, X., Mueller, L. (2018). Discovery of Risdiplam, a Selective Survival of Motor Neuron-2 (SMN2) Gene Splicing Modifier for the Treatment of Spinal Muscular Atrophy (SMA). Journal of Medicinal Chemistry, 61(15), 6501–6517. <a href='https://doi.org/10.1021/acs.jmedchem.8b00741'>https://doi.org/10.1021/acs.jmedchem.8b00741</a>
       </div>
 
-      <div style='font-weight:100; font-size: 13px; text-indent: -20px; padding-left: 40px; padding-top: 4px; text-align: justify; max-width:700px; '>
+      <div style='font-weight:100; font-size: 13px; text-indent: -20px; padding-left: 20px; padding-top: 4px; text-align: justify; max-width:700px; '>
       <i class="far fa-newspaper"></i>&nbsp;Schneider-Poetsch, T., Chhipi-Shrestha, J. K., &#38; Yoshida, M. (2021). Splicing modulators: on the way from nature to clinic. In Journal of Antibiotics (Vol. 74, Issue 10, pp. 603–616). Springer Nature. <a href='https://doi.org/10.1038/s41429-021-00450-1'>https://doi.org/10.1038/s41429-021-00450-1</a>
       </div>
 
-      <div style='font-weight:100; font-size: 13px; text-indent: -20px; padding-left: 40px; padding-top: 4px; text-align: justify; max-width:700px;'>
+      <div style='font-weight:100; font-size: 13px; text-indent: -20px; padding-left: 20px; padding-top: 4px; text-align: justify; max-width:700px;'>
       <i class="far fa-newspaper"></i>&nbsp;Lightfoot, H. L., &#38; Smith, G. F. (2023). Targeting RNA with small molecules a safety perspective. British Journal of Pharmacology. <a href='https://doi.org/10.1111/bph.16027'>https://doi.org/10.1111/bph.16027</a>
       </div>
     
-    </div>
-
     <br>
       
     <div id="disqus_thread"></div>
@@ -142,16 +113,6 @@
 
   gtag('config', 'G-714JBVJZEV');
 </script>  
-
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
-      <a href="https://twitter.com/gregor_rot"><i class="fab fa-twitter"></i>&nbsp;Follow me on Twitter</a>
-      &nbsp;&nbsp;
-      <i class="fas fa-hiking"></i>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
 
   </body>
   </html>
