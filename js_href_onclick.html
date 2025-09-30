@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<div style="max-width: 600px !important; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+<div style="max-width: 1000px !important; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
   
   <br>
   <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
@@ -43,13 +43,18 @@
   <br><br>
         When you develop a web page with JQuery and Javascript, you probably have several places on the page where you have to connect javascript function links to text or images. Suppose you have a simple javascript function defined:
 <br><br>
-<pre>
-  function open_data(event) {
-    alert("Open data tab");
-  }
-</pre>
+<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
+function open_data(event) {
+  alert("Open data tab");
+}
+</xmp></code></pre>
+
         And now you would like this function open_data (which will show/hide some div or something in this direction) to trigger when you click on a link. You could do something like this:
-<xmp><a href="javascript:open_data(event);">Open Data</a></xmp>
+
+<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
+<a href="javascript:open_data(event);">Open Data</a>
+</xmp></code></pre>
+
         When you click on this link, the function open_data is called. This is all good. However, when you mouse-over the "Open Data" text, you will see the link displayed as "javascript:open_data(event)". However, what about opening the data in a new window or sending the link to the data to someone via URL?
 
       <br><br>
@@ -64,32 +69,32 @@
       <b>How do you achieve the behaviour where command-clicking on a link opens the link URL (href) and simply clicking on a link runs a javascript function?</b><br>
 
         The first idea is to do something like this:
-<xmp><a href="https://expressRNA.org/data" onclick:open_data(event);
-  return false;">Open Data</a></xmp>
+<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
+<a href="https://expressRNA.org/data" onclick:open_data(event); return false;">Open Data</a>
+</xmp></code></pre>
 
         This works great. If you click on the link, the javascript function "open_data" is run. If you right-click and "Open in new tab", the URL "expressRNA.org/data" is open in a new tab. However, if you command-click the link, the thingy doesn't work as expected.
         You need a little bit more logic in the open_data function to catch the command-click events to make it really really nice for the user.
 
-<xmp>function open_data(event, url) {
+<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
+function open_data(event, url) {
   if (event.ctrlKey || event.metaKey) {
     window.open(url);
   } else {
     alert("Open data tab");
   }
 }
+<a href="https://expressRNA.org/data" onclick:open_data(event, 'https://expressRNA.org/data'); return false;"></a>
+</xmp></code></pre>
 
-<a href="https://expressRNA.org/data" onclick:open_data(event, 
-'https://expressRNA.org/data'); return false;"></a>
-</xmp>
+    And voila. You now have links on your web page that trigger a javascript function when you click them. Still, you can attach a URL to the link (href), where if you "Open in new tab" or command-click the link, a new browser tab is open and the URL is loaded. This is super essential for web apps sharing data, since you would like, for example, to open several analysis and libraries (expressRNA) in different browser tabs, which you would also like to share with colleagues via the URL links.
 
-      And voila. You now have links on your web page that trigger a javascript function when you click them. Still, you can attach a URL to the link (href), where if you "Open in new tab" or command-click the link, a new browser tab is open and the URL is loaded. This is super essential for web apps sharing data, since you would like, for example, to open several analysis and libraries (expressRNA) in different browser tabs, which you would also like to share with colleagues via the URL links.
-
-      <br><br>Thanks for reading! and if it was helpful for you, leave a comment below.</font>
+    <br><br>Thanks for reading! and if it was helpful for you, leave a comment below.</font>
 
 
     <br><br>
 
-    <b>References</b><br>
+    <b>References</b><br><br>
 
     <ul>
       
@@ -140,6 +145,51 @@
       <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
     </center>
   </div>
+
+
+<!-- START code highlight part -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+    pre code {
+    background: transparent !important;
+    }
+    pre {
+    background: transparent !important;
+    border: none;
+    }
+</style>
+
+<style>
+pre {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  border: 1px dashed gray;
+}
+</style>
+
+<script>
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const code = btn.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 1500);
+        });
+    });
+    });
+</script>
+<!-- END code highlight part -->
+
 
   </body>
   </html>

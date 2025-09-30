@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
+  <title>Gregor Rot &#8211; Bioinformatics</title>
+  <meta name="robots" content="noarchive">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gregor Rot" />
+  <meta property="og:description" content="Bioinformatics" />
+  <meta property="og:url" content="https://grexor.github.io" />
+  <meta property="og:site_name" content="Gregor Rot" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">    
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-714JBVJZEV');
+  </script>
+    
+</head>
+<body>
+
+<div style="max-width: 1000px !important; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+
+<br>
+<div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
+<br>
+
+<br>
+<b>202505<br>pubScan: Explore your scientific co-authorship network</b>
+<br><br>
+
+During end of 2024 in winter I was parsing and creating some visualizations on a small scale for visualizing the co-publication network for selected scientists. It was pretty fast and all the data was stored locally (being parsed over API from PubMed).
+
+<br><br>
+
+And then, I had an idea that it would be really cool to be able to search for any author and visualize the co-publication network. However to reach that kind of goal, ABC challenges popped up :-)
+
+<br><br><b>Challenge A</b><br>The parsing over PubMed was not an option anymore, since my code would retrieve all publications of the center author (the auther that the user searches for), find all co-authors on those publications, and then also retrieve all the publications for these co-authors.
+Not only was this too slow over the API, it was also not the way to go, one never should "attach" oneself to APIs like that if there are other options.
+
+<br><br><b>Solution A</b><br>
+PubMed provides XML files for all the publications stored in their database. The main files are called <a href='https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/' target="_new">PubMed baseline</a>, and then there are montly updates called <a href='ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/' target=_new>PubMed updatefiles</a>. So the data I could get and store locally on the server, but how to make it searchable, by PMID and by author name, and in a very fast way?
+<br>I tried several things, parsing the XML and storing PMID records into a file and author to PMIDs records into another file, and then searching with <b>grep</b>. This worked reasonably well up to a certain size of files however in the end was not feasible. I turned to Mysql, created two tables,
+<b>mysqk:authors</b> and <b>mysql:publications</b>. After doing some indexing and debugging XML parsing (ah!), I got a database that I would search two ways: either search for an author (full name) and get all the authors PMIDs, or search for a PMID and get all the information related to a specific publication.
+<br>However, the user would start typing the author name in the browser and I also needed a <b>name matching</b> method, so the names that would be suggested to the user would be the ones present in the pubScan (=PubMed) database. Leaving aside the problem that authors do not have unique IDs in PubMed, still I needed a way to match names. And here, simply writting all the names in a file (one per line) and then using <b>grep (with -E and some additional tricks)</b> proved to be working well.
+
+
+<br><br><b>Challenge B</b><br>The size of the network for some authors was just too large. I realized the <a href='https://visjs.org/' target=_new>vis.js</a> component I was using was ideal for displaying 150-200 nodes and max 3-5K edges, for the network to be still clickable and responsive.
+
+<br><br><b>Solution B</b><br>
+To keep the size of the network manageable, pubScan shows a maximum of 150 co-authors (based on number of shared publications with main author). Additionally, up to 2,000 edges are included. This includes all edges between the main author and its co-authors plus the 100 strongest co-authorship links. If the edges in this case are <2000, a random sample of the remaining edges is added.
+
+<br><br><b>Challenge C</b><br>The loading of all the data (stored locally on my server) would still take a few seconds, or even up to 10 seconds for very large networks, so I needed some way to stream the process, meaning the user would need to see progress of the download (construction) of the network.
+
+<br><br><b>Solution C</b><br>
+
+Here the solution was streaming, so one single call to the server API from the browser client generates the response "in steps", and each step trigers an update on the client side (visual display of progress in the browser for example).
+
+<pre><button class="copy-btn">Copy</button><code class="language-javascript">
+# streaming on the client side using fetch
+function get_publications(pmids) {
+    let encodedQuery = encodeURIComponent(pmids);
+    const datetime = new Date().toISOString();
+    fetch("https://pubscan.expressrna.org/gw/index.py?action=get_publications&pmids=" + encodedQuery + "&response_type=json&datetime=" + datetime).then(response =>
+    {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+
+        function readStream() {
+            return reader.read().then(({ done, value }) => {
+                if (done) {
+                    // stream finished
+                    return;
+                }
+                buffer += decoder.decode(value, { stream: true });
+                let parts = buffer.split("\n");  
+                buffer = parts.pop();  // Keep the last incomplete part in buffer
+                for (const part of parts) {
+                    try {
+                        const mydata = JSON.parse(part);
+                        ...
+</code></pre>
+
+<pre><button class="copy-btn">Copy</button><code class="language-python">
+# streaming on the server side with mod_wsgy using yield
+class TableClass():
+...
+def get_data(...):
+   test = {"instruction": "progress", "description": f"found {len(pmids)} publications for {center_name}"}
+   yield self.return_string(json.dumps(test)+"\n")
+   sys.stdout.flush()
+</code></pre>
+
+Complete code available on <a href='https://github.com/grexor/pubscan' target='_github_pubscan'>pubScan Github</a>.
+
+<br><br><font color=gray>Thanks for reading and if it was helpful to you, leave a comment below.</font>
+
+<br><br>
+
+<b>References</b><br>
+<ul><br>
+<li><a href='https://pubscan.expressrna.org' target=_new>pubScan: Explore your scientific co-authorship network</a>
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+this.page.title = "FM";
+this.page.url = "https://grexor.github.io/pubscan.html";
+this.page.identifier = "blog_pubscan";
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://grexor.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-714JBVJZEV');
+</script>
+
+  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
+    <center>
+
+      <a href="https://twitter.com/gregor_rot"><i class="fab fa-twitter"></i>&nbsp;Follow me on Twitter</a>
+      &nbsp;&nbsp;
+      <i class="fas fa-hiking"></i>
+      &nbsp;&nbsp;
+      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+    </center>
+  </div>
+
+<!-- START code highlight part -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+    pre code {
+    background: transparent !important;
+    }
+    pre {
+    background: transparent !important;
+    border: none;
+    }
+</style>
+
+<style>
+pre {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  border: 1px dashed gray;
+}
+</style>
+
+<script>
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const code = btn.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 1500);
+        });
+    });
+    });
+</script>
+<!-- END code highlight part -->
+
+  </body>
+  </html>

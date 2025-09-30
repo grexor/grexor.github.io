@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<div style="max-width: 600px !important; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+<div style="max-width: 1000px !important; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
   
   <br>
   <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
@@ -47,7 +47,8 @@
       <b>Preparing data in TAB files</b>
         Turns out the fastest way to populate a Mysql table is to load the data from a TAB file. Storing numbers and text in a text file is simple, however how do you store binary data and load it into Mysql? Turns out you need to use something like hexlify, so to represent the binary data in hex format, which can be stored as text. Let's look at how you would do that in Python:
 <br><br>
-<pre>
+
+<pre><button class="copy-btn">Copy</button><code class="language-python"><xmp>
 import zlib
 import binascii
 
@@ -59,7 +60,8 @@ my_data_compressed_hex = binascii.hexlify(my_data_compressed)
 # write the data to the file
 f = open("data.tab", "wt")
 f.write("column1\tcolumn2\t%s" % my_data_compressed_hex)
-</pre>
+</xmp></code></pre>
+
         Ekola, you would have now the data in a TAB delimited file (one line per row).
 
 <br><br>
@@ -67,7 +69,8 @@ f.write("column1\tcolumn2\t%s" % my_data_compressed_hex)
 <b>Loading (storing) data into Mysql tables</b><br>
         How to store and load into Mysql? You would create a sql file in this direction:
         <br><br>
-<pre>
+
+<pre><button class="copy-btn">Copy</button><code class="language-sql"><xmp>
 DROP TABLE IF EXISTS my_table;
 CREATE TABLE `my_table` (
 	  `column_1` varchar(255) NOT NULL,
@@ -77,7 +80,7 @@ CREATE TABLE `my_table` (
 
 LOAD DATA LOCAL INFILE "data.tab" INTO TABLE my_table FIELDS TERMINATED BY '\t' \
 (column_1, column_2, @column_3_val) SET column_3 = UNHEX(@column_3_val);
-</pre>
+</xmp></code></pre>
 
   Notice the UNHEX for the column_3 field, since we need to store in binary and not in hex strings. Voila. Thanks for reading! and if it was helpful for you, leave a comment below.
 
@@ -131,6 +134,50 @@ LOAD DATA LOCAL INFILE "data.tab" INTO TABLE my_table FIELDS TERMINATED BY '\t' 
       <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
     </center>
   </div>
+
+<!-- START code highlight part -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+    pre code {
+    background: transparent !important;
+    }
+    pre {
+    background: transparent !important;
+    border: none;
+    }
+</style>
+
+<style>
+pre {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  border: 1px dashed gray;
+}
+</style>
+
+<script>
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const code = btn.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 1500);
+        });
+    });
+    });
+</script>
+<!-- END code highlight part -->
+
 
   </body>
   </html>
