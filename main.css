@@ -31,9 +31,20 @@ div a:hover {
 
 .rainbow-text {
   font-size: 16px;
-  background: linear-gradient(to right, #ff0000, #ff9900, #33cc33, #3399ff, #9933cc, #ff3399);
-  -webkit-background-clip: text;
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #ff9900,
+    #33cc33,
+    #3399ff,
+    #9933cc,
+    #ff3399
+  );
+  background-size: 100% auto;
   color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; /* Required for iOS Safari & Chrome mobile */
+  -webkit-text-fill-color: transparent; /* Critical for mobile browsers */
   animation: rainbow 4s linear infinite;
   display: inline-block;
 }
