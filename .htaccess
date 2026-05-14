@@ -1,3 +1,8 @@
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /var/wwwpass
+Require valid-user
+
 Options +Includes
 XBitHack On
 
