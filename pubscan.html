@@ -71,7 +71,7 @@ Here the solution was streaming, so one single call to the server API from the b
 function get_publications(pmids) {
     let encodedQuery = encodeURIComponent(pmids);
     const datetime = new Date().toISOString();
-    fetch("https://pubscan.expressrna.org/gw/index.py?action=get_publications&pmids=" + encodedQuery + "&response_type=json&datetime=" + datetime).then(response =>
+    fetch("https://pubscan.org/gw/index.py?action=get_publications&pmids=" + encodedQuery + "&response_type=json&datetime=" + datetime).then(response =>
     {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
@@ -110,7 +110,7 @@ Complete code available on <a href='https://github.com/grexor/pubscan' target='_
 
 <b>References</b><br>
 <ul><br>
-<li><a href='https://pubscan.expressrna.org' target=_new>pubScan: Explore your scientific co-authorship network</a>
+<li><a href='https://pubscan.org' target=_new>pubScan: Explore your scientific co-authorship network</a>
 </ul>
 
 <div id="disqus_thread"></div>
