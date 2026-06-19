@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-714JBVJZEV');
+  </script>
+
+  <meta charset="utf-8">
+  <title>Gregor Rot — be playful</title>
+  <meta name="robots" content="noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  <style>
+    @font-face {
+      font-family: 'BDCartoonShout';
+      src: url('pacman_assets/BD_Cartoon_Shout-webfont.ttf') format('truetype');
+    }
+
+    body {
+      background: #f7f2e9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px 10px 40px;
+    }
+
+    .top-bar {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .top-bar a, p.hint {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #666 !important;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .top-bar a:hover { color: #aaa !important; }
+
+    #pacman-wrap {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    #start-btn {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #f7f2e9;
+      background: #444;
+      border: none;
+      border-radius: 5px;
+      padding: 7px 20px;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      transition: background 0.15s;
+    }
+    #start-btn:hover { background: #222; }
+
+    p.hint {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #444;
+      text-align: center;
+      margin-top: 14px;
+      letter-spacing: 0.03em;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="index.html">← Back home</a>
+  </div>
+
+  <button id="start-btn" onclick="PACMAN.start()">Start new game</button>
+  <div id="pacman-wrap"></div>
+  <p class="hint">Arrow keys to move &nbsp;·&nbsp; N = new game &nbsp;·&nbsp; S = toggle sound</p>
+  <p class="hint" style="margin-top:28px; color:#aaa;"><a href="https://en.wikipedia.org/wiki/Pac-Man" target="_blank" style="color:#aaa;">About Pac-Man</a></p>
+
+  <script src="modernizr-1.5.min.js"></script>
+  <script src="pacman.js"></script>
+  <script>
+    localStorage.removeItem('soundDisabled');
+    window.addEventListener('DOMContentLoaded', function () {
+      PACMAN.init(document.getElementById('pacman-wrap'), 'pacman_assets/');
+    });
+  </script>
+
+</body>
+</html>
