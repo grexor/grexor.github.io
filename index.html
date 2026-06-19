@@ -24,11 +24,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="main.css">
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+        url('https://www.transparenttextures.com/patterns/cubes.png') #ffffff;
+    }
+  </style>
 
 </head>
 <body>
-
-<canvas id="bg-canvas"></canvas>
 
 <nav class="side-nav">
   <a href="#"           style="color:#606060;">Whats up?</a>
@@ -126,164 +131,6 @@
 
 <br>
 
-<script>
-(function () {
-  const canvas = document.getElementById('bg-canvas');
-  const ctx    = canvas.getContext('2d');
-
-  const FONT_SIZE     = 16;
-  const LINE_H        = 21;
-  const FONT          = `300 ${FONT_SIZE}px 'IBM Plex Mono', monospace`;
-  const BASES         = ['A', 'U', 'G', 'C'];
-  const MOTIF_HOLD_MS = 2500;   // ms each motif stays fully visible
-  const FADE_SPEED    = 0.025;  // alpha step per frame (~40 frames = ~0.65s crossfade)
-
-  const MOTIFS = [
-    { seq: 'AAUAAA', color: '#ff3399' },
-    { seq: 'AUUAAA', color: '#ff9900' },
-    { seq: 'AAUACA', color: '#9933cc' },
-    { seq: 'UAUAAA', color: '#ff3399' },
-    { seq: 'AAGAAA', color: '#ff9900' },
-    { seq: 'CAUAAA', color: '#9933cc' },
-    { seq: 'GUAAGU', color: '#33cc33' },
-    { seq: 'UUUCAG', color: '#ff9900' },
-    { seq: 'GAAGAA', color: '#33cc33' },
-    { seq: 'GGAGGA', color: '#9933cc' },
-    { seq: 'UGCAUG', color: '#ff0000' },
-    { seq: 'UUAGUU', color: '#9933cc' },
-    { seq: 'UGUGU',  color: '#ff9900' },
-    { seq: 'GCACUU', color: '#ff0000' },
-    { seq: 'AAAUA',  color: '#ff3399' },
-    { seq: 'UGUGUG', color: '#ff9900' },
-    { seq: 'UUAUUU', color: '#ff0000' },
-    { seq: 'ACCUCC', color: '#6f61e8' },
-    { seq: 'AGGAGG', color: '#6f61e8' },
-    { seq: 'AUUUA',  color: '#ff3399' },
-    { seq: 'GGACU',  color: '#33cc33' },
-    { seq: 'UGACU',  color: '#33cc33' },
-  ];
-
-  let cols, rows, total, CHAR_W;
-  let sequence, motifOccurrences;
-  let bgCanvas, bgCtx;
-  let currentIdx = 0, prevIdx = -1;
-  let fadeProgress = 1, lastSwitch = 0;
-
-  function buildSequence() {
-    sequence = Array.from({ length: total }, () => BASES[Math.floor(Math.random() * 4)]);
-
-    // inject each motif at ~25 random positions for ~10x natural density
-    for (const m of MOTIFS) {
-      for (let k = 0; k < 25; k++) {
-        const pos = Math.floor(Math.random() * (total - m.seq.length));
-        for (let i = 0; i < m.seq.length; i++) sequence[pos + i] = m.seq[i];
-      }
-    }
-
-    const seqStr = sequence.join('');
-    motifOccurrences = MOTIFS.map(m => {
-      const positions = [];
-      let p = 0;
-      while (p < seqStr.length) {
-        const idx = seqStr.indexOf(m.seq, p);
-        if (idx < 0) break;
-        positions.push(idx);
-        p = idx + 1;
-      }
-      return positions;
-    });
-  }
-
-  function edgeAlpha(i) {
-    const x    = (i % cols) * CHAR_W;
-    const dist = Math.abs(x - canvas.width / 2);
-    const inner = 325;
-    const outer = canvas.width / 2;
-    if (dist <= inner) return 0;
-    return Math.pow((dist - inner) / Math.max(outer - inner, 1), 0.7);
-  }
-
-  function drawBackground() {
-    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-    bgCtx.font      = FONT;
-    bgCtx.fillStyle = '#888';
-    for (let i = 0; i < total; i++) {
-      const a = edgeAlpha(i);
-      if (a === 0) continue;
-      bgCtx.globalAlpha = 0.18 * a;
-      bgCtx.fillText(sequence[i], (i % cols) * CHAR_W, Math.floor(i / cols) * LINE_H + FONT_SIZE);
-    }
-    bgCtx.globalAlpha = 1;
-  }
-
-  function init() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.font = FONT;
-    CHAR_W = Math.ceil(ctx.measureText('A').width);
-    cols  = Math.floor(canvas.width  / CHAR_W);
-    rows  = Math.floor(canvas.height / LINE_H);
-    total = cols * rows;
-
-    bgCanvas        = document.createElement('canvas');
-    bgCanvas.width  = canvas.width;
-    bgCanvas.height = canvas.height;
-    bgCtx           = bgCanvas.getContext('2d');
-
-    buildSequence();
-    drawBackground();
-    currentIdx   = 0;
-    prevIdx      = -1;
-    fadeProgress = 1;
-    lastSwitch   = Date.now();
-  }
-
-  function drawMotifLayer(mIdx, alpha) {
-    if (mIdx < 0 || !motifOccurrences[mIdx].length) return;
-    const m = MOTIFS[mIdx];
-    ctx.fillStyle = m.color;
-    for (const pos of motifOccurrences[mIdx]) {
-      for (let i = 0; i < m.seq.length; i++) {
-        const idx = pos + i;
-        if (idx >= total) continue;
-        const a = edgeAlpha(idx);
-        if (a === 0) continue;
-        ctx.globalAlpha = alpha * a;
-        ctx.fillText(sequence[idx], (idx % cols) * CHAR_W, Math.floor(idx / cols) * LINE_H + FONT_SIZE);
-      }
-    }
-  }
-
-  init();
-  window.addEventListener('resize', init);
-
-  function draw() {
-    const now = Date.now();
-
-    if (fadeProgress >= 1 && now - lastSwitch >= MOTIF_HOLD_MS) {
-      prevIdx      = currentIdx;
-      currentIdx   = (currentIdx + 1) % MOTIFS.length;
-      fadeProgress = 0;
-      lastSwitch   = now;
-      if (currentIdx === 0) { buildSequence(); drawBackground(); }
-    }
-
-    if (fadeProgress < 1) fadeProgress = Math.min(fadeProgress + FADE_SPEED, 1);
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(bgCanvas, 0, 0);
-    ctx.font = FONT;
-
-    drawMotifLayer(prevIdx,    (1 - fadeProgress) * 0.60);
-    drawMotifLayer(currentIdx, fadeProgress        * 0.60);
-
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
-</script>
 
 </body>
 </html>

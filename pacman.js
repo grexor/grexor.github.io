@@ -588,10 +588,18 @@ Pacman.Map = function (size) {
         }
     }
     
-    function reset() {       
+    var pillPositions = [];
+
+    function reset() {
         map    = Pacman.MAP.clone();
         height = map.length;
-        width  = map[0].length;        
+        width  = map[0].length;
+        pillPositions = [];
+        for (var pi = 0; pi < height; pi++) {
+            for (var pj = 0; pj < width; pj++) {
+                if (map[pi][pj] === Pacman.PILL) { pillPositions.push({y:pi, x:pj}); }
+            }
+        }
     };
 
     function block(pos) {
@@ -602,39 +610,38 @@ Pacman.Map = function (size) {
         map[pos.y][pos.x] = type;
     };
 
-    function drawPills(ctx) { 
+    function drawPills(ctx) {
 
         if (++pillSize > 30) {
             pillSize = 0;
         }
-        
-        for (i = 0; i < height; i += 1) {
-		    for (j = 0; j < width; j += 1) {
-                if (map[i][j] === Pacman.PILL) {
+
+        for (var pi = 0; pi < pillPositions.length; pi++) {
+            var py = pillPositions[pi].y, px = pillPositions[pi].x;
+            if (map[py][px] === Pacman.PILL) {
                     ctx.beginPath();
 
-                    ctx.fillStyle = "#f7f2e9";
-		            ctx.fillRect((j * blockSize), (i * blockSize),
+                    ctx.fillStyle = "#ffffff";
+		            ctx.fillRect((px * blockSize), (py * blockSize),
                                  blockSize, blockSize);
 
                     ctx.fillStyle = "#ff3399";
-                    ctx.arc((j * blockSize) + blockSize / 2,
-                            (i * blockSize) + blockSize / 2,
+                    ctx.arc((px * blockSize) + blockSize / 2,
+                            (py * blockSize) + blockSize / 2,
                             Math.abs(5 - (pillSize/3)),
                             0,
                             Math.PI * 2, false);
                     ctx.fill();
                     ctx.closePath();
-                }
-		    }
-	    }
+            }
+        }
     };
-    
+
     function draw(ctx) {
         
         var i, j, size = blockSize;
 
-        ctx.fillStyle = "#f7f2e9";
+        ctx.fillStyle = "#ffffff";
 	    ctx.fillRect(0, 0, width * size, height * size);
 
         drawWall(ctx);
@@ -659,7 +666,7 @@ Pacman.Map = function (size) {
         if (layout === Pacman.EMPTY || layout === Pacman.BLOCK ||
             layout === Pacman.BISCUIT) {
 
-            ctx.fillStyle = "#f7f2e9";
+            ctx.fillStyle = "#ffffff";
 		    ctx.fillRect((x * blockSize), (y * blockSize),
                          blockSize, blockSize);
 
@@ -1191,7 +1198,12 @@ var PACMAN = (function () {
         document.addEventListener("keydown", keyDown, true);
         document.addEventListener("keypress", keyPress, true);
 
-        timer = window.setInterval(mainLoop, 1000 / Pacman.FPS);
+        var rafLast = 0, rafStep = 1000 / Pacman.FPS;
+        function rafLoop(ts) {
+            if (ts - rafLast >= rafStep) { rafLast = ts; mainLoop(); }
+            timer = requestAnimationFrame(rafLoop);
+        }
+        timer = requestAnimationFrame(rafLoop);
     };
 
     return {
