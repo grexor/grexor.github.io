@@ -25,7 +25,7 @@ div {
   padding: 3px 8px;
   margin-bottom: 5px;
   margin-top: 2px;
-  display: block;
+  display: inline-block;
 }
 
 div a {
