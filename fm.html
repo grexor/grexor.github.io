@@ -17,7 +17,43 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    .blog-img { cursor: zoom-in; transition: opacity 0.15s; }
+    .blog-img:hover { opacity: 0.85; }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      cursor: default;
+    }
+    #lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0.7;
+      user-select: none;
+    }
+    #lightbox-close:hover { opacity: 1; }
+  </style>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
@@ -58,7 +94,7 @@ And the base of the fifth-metatarsal bone is indeed very small but if broken, it
 <br><br>
 
 <center>
-<img src=img/fm1.png style='max-width: 380px; border-radius: 20px;'><br>
+<img src=img/fm1.png class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
 Source: <a href='https://upswinghealth.com/conditions/fifth-metatarsal-fractures/' target=_new>https://upswinghealth.com/conditions/fifth-metatarsal-fractures/</a>
 </center>
 
@@ -68,7 +104,7 @@ Of course by lying in bed or sitting in a chair and with a swallen foot that nee
 <br><br>
 
 <center>
-<img src=img/fm2.jpeg style='max-width: 380px; border-radius: 20px;'><br>
+<img src=img/fm2.jpeg class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
 Source: myself
 </center>
 
@@ -78,7 +114,7 @@ And like every fool that get's an injury or illness I did my research. I knew mo
 <br><br>
 
 <center>
-<img src=img/fm3.jpeg style='max-width: 380px; border-radius: 20px;'><br>
+<img src=img/fm3.jpeg class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
 New shoe
 </center>
 
@@ -164,6 +200,28 @@ s.setAttribute('data-timestamp', +new Date());
       <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
     </center>
   </div>
+
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('img.blog-img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        lbImg.src = img.src;
+        lb.classList.add('open');
+      });
+    });
+
+    function close() { lb.classList.remove('open'); lbImg.src = ''; }
+    lb.addEventListener('click', close);
+    document.getElementById('lightbox-close').addEventListener('click', close);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  </script>
 
   </body>
   </html>

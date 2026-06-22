@@ -29,7 +29,43 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    .blog-img { cursor: zoom-in; transition: opacity 0.15s; }
+    .blog-img:hover { opacity: 0.85; }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      cursor: default;
+    }
+    #lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0.7;
+      user-select: none;
+    }
+    #lightbox-close:hover { opacity: 1; }
+  </style>
     
 </head>
 <body>
@@ -184,15 +220,11 @@ So I would say (mostly to myself), beware which places you spend your limited ti
 <p>And that's, for the most part, why the sauna is gone.
 </p>
 
-<br><br>
-
-<center>
-<img src=img/sts1.jpg width=300>
-<img src=img/sts2.jpg width=300><br>
+<center style="margin: 12px 0;">
+<img src=img/sts1.jpg width=300 class="blog-img">
+<img src=img/sts2.jpg width=300 class="blog-img"><br>
 <p class="font-weight-light" style='font-size: 12px; color: #000000;'>Save the sauna fliers</a>
 </center>
-
-<br><br>
 
 <br>Thanks for reading and if it was helpful to you, leave a comment below.
   <br><br>
@@ -227,6 +259,28 @@ So I would say (mostly to myself), beware which places you spend your limited ti
       <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
     </center>
   </div>
+
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('img.blog-img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        lbImg.src = img.src;
+        lb.classList.add('open');
+      });
+    });
+
+    function close() { lb.classList.remove('open'); lbImg.src = ''; }
+    lb.addEventListener('click', close);
+    document.getElementById('lightbox-close').addEventListener('click', close);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+  </script>
 
   </body>
   </html>
