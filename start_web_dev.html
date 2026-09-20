@@ -1,199 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start webdev with Python, Apache and Docker &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html">Save the sauna</a>
-  <a href="start_web_dev.html" class="active">Start webdev</a>
-  <a href="pubscan.html">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html">Metatarsal</a>
-  <a href="js_href_onclick.html">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-<div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
-<div class="post-date">202512</div>
-<div class="post-title">Start webdev with Python, Apache and Docker</div>
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
 
-If you already know Python and have some basic familiarity with HTML and JavaScript (or you’re currently learning them), getting started with web development can still feel surprisingly hard. There are many platforms and frameworks that promise quick results, but they often hide what’s really going on under the hood.
-<br><br>
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2025-12</div>
+    <h1 class="page-title">Start webdev with Python, Apache and Docker</h1>
+
+    <div class="post-content">
+
+<p>
+If you already know Python and have some basic familiarity with HTML and JavaScript (or you&rsquo;re currently learning them), getting started with web development can still feel surprisingly hard. There are many platforms and frameworks that promise quick results, but they often hide what&rsquo;s really going on under the hood.
+</p>
+<p>
 In this tutorial, I want to show you a different approach: starting from simple, fundamental building blocks and gradually assembling them into fully fledged web applications.
-<br><br>
-This short introduction is meant to help you overcome the initial “steep hill” of web development—which, as you’ll soon discover, isn’t quite as steep as it first appears. Like any problem that seems complex at first glance, we’ll break it down into small, manageable pieces and tackle each challenge step by step.
-<br><br>
+</p>
+<p>
+This short introduction is meant to help you overcome the initial &ldquo;steep hill&rdquo; of web development&mdash;which, as you&rsquo;ll soon discover, isn&rsquo;t quite as steep as it first appears. Like any problem that seems complex at first glance, we&rsquo;ll break it down into small, manageable pieces and tackle each challenge step by step.
+</p>
 
-<b>1. Main idea and goal</b>
-<br>
+<p><b>1. Main idea and goal</b></p>
 
-Our goal is to build a very simple web application: a single web page with a button. When the button is clicked, a Python function is executed on the server, and the result—a plain text string—is sent back to the browser and displayed inside a <div> on the page.
-<br><br>
-We’ll call this app pwapp (short for Python web app). The server-side function will be intentionally simple: it will just return (or echo) the value of a parameter that we send to it.
+<p>
+Our goal is to build a very simple web application: a single web page with a button. When the button is clicked, a Python function is executed on the server, and the result&mdash;a plain text string&mdash;is sent back to the browser and displayed inside a &lt;div&gt; on the page.
+</p>
+<p>
+We&rsquo;ll call this app pwapp (short for Python web app). The server-side function will be intentionally simple: it will just return (or echo) the value of a parameter that we send to it.
+</p>
 
-<pre><button class="copy-btn">Copy</button><code class="language-python">
-def echo(self):
+<pre><button class="copy-btn">Copy</button><code class="language-python">def echo(self):
     message = self.pars.get("message", "no_message")
-    return [self.return_string(message)]
-</code></pre>
+    return [self.return_string(message)]</code></pre>
 
-To run Python code on a web server (Apache), we’ll use <a href='https://modwsgi.readthedocs.io/en/master/' target=_new>mod_wsgi</a>. This module makes it possible to execute Python functions in response to web requests—such as those triggered by JavaScript running in the browser.
+<p>
+To run Python code on a web server (Apache), we&rsquo;ll use <a href='https://modwsgi.readthedocs.io/en/master/' target="_new">mod_wsgi</a>. This module makes it possible to execute Python functions in response to web requests&mdash;such as those triggered by JavaScript running in the browser.
+</p>
 
-<br><br>
-<b>2. Software setup</b><br>
+<p><b>2. Software setup</b></p>
 
-We’ll do all development on your local machine. To keep the setup simple and avoid dependency issues, we’ll use Docker to install and run everything we need—Apache, mod_wsgi, Python, and a few additional tools.
+<p>
+We&rsquo;ll do all development on your local machine. To keep the setup simple and avoid dependency issues, we&rsquo;ll use Docker to install and run everything we need&mdash;Apache, mod_wsgi, Python, and a few additional tools.
 Installing Docker is the only prerequisite to follow along with this hands-on tutorial.
+</p>
 
+<p>
 All required files are already provided in the <a href="https://github.com/grexor/pwapp" target="_new"><b>pwapp</b> Github repository</a>, which is structured as follows:
+</p>
 
-<pre><code class="language-javascript"></code>pwapp/
-├── dbase/        # Docker base: folder with Dockerfile and setup files
-│   └── venv/     # Python virtual environment created by Docker
-│   └── logs/     # Apache logs
-│   └── run/      # Apache and mod_wsgi pid and other files
-├── web/          # Contains HTML, CSS, JS and other web files
-└── pwapp/        # The actual WSGI app = Python package that is installed
-</code></pre>
+<pre><code>pwapp/
+&#9500;&#9472;&#9472; dbase/        # Docker base: folder with Dockerfile and setup files
+&#9474;   &#9492;&#9472;&#9472; venv/     # Python virtual environment created by Docker
+&#9474;   &#9492;&#9472;&#9472; logs/     # Apache logs
+&#9474;   &#9492;&#9472;&#9472; run/      # Apache and mod_wsgi pid and other files
+&#9500;&#9472;&#9472; web/          # Contains HTML, CSS, JS and other web files
+&#9492;&#9472;&#9472; pwapp/        # The actual WSGI app = Python package that is installed</code></pre>
 
+<p>
 To install everything, simply clone the GitHub repository, navigate to the <b>dbase/ directory</b>, and build the Docker image using <b>build.sh</b>. This step installs Apache and mod_wsgi inside the container and creates a Python virtual environment with all required packages listed in <b>dbase/venv/requirements.txt</b>.
+</p>
 
-<br><br>
-<b>3. Ready to go</b><br>
+<p><b>3. Ready to go</b></p>
 
-You’re now ready to explore how everything fits together. Open your browser and visit
-http://localhost:8007, then start experimenting with index.html—especially the JavaScript functions attached to the buttons—and with index.py, where you can inspect and modify the echo function.
-<br><br>
+<p>
+You&rsquo;re now ready to explore how everything fits together. Open your browser and visit
+http://localhost:8007, then start experimenting with index.html&mdash;especially the JavaScript functions attached to the buttons&mdash;and with index.py, where you can inspect and modify the echo function.
+</p>
+<p>
 A concise 10-minute video tutorial that walks through this setup step by step is also available on YouTube:
-<br><br>
+</p>
 
-<iframe style='width: 100%; aspect-ratio: 16 / 9;  height: auto; display: block; border: none;' src="https://www.youtube.com/embed/-AnWSa-Cpik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style='width: 100%; aspect-ratio: 16 / 9; height: auto; display: block; border: none;' src="https://www.youtube.com/embed/-AnWSa-Cpik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
-
+<p>
 Complete code available on <a href='https://github.com/grexor/pwapp' target='_github_pwapp'>pwapp Github</a>.
+</p>
 
-<br><br><font color=gray>Thanks for reading and if it was helpful to you, leave a comment below.
+    </div>
 
-<br><br>
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2026-05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how NOT to become a robot</a></div></div>
+<div class="post-row"><div class="post-date">2025-05</div><div class="post-body"><a href="pubscan.html">pubScan: Explore your scientific co-authorship network</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a></div></div>
+<div class="post-row"><div class="post-date">2021-05</div><div class="post-body"><a href="js_href_onclick.html">Javascript functions and links</a></div></div>
+      </div>
+    </div>
 
-<b>References</b><br>
-<ul><br>
-    <li><a href='https://www.youtube.com/watch?v=-AnWSa-Cpik' target=_new>Youtube: Starting web-app development with Python + HTML + Javascript</a></li>
-    <li><a href='https://github.com/grexor/pwapp' target='_github_pwapp'>pwapp Github repository</a>
-    <li><a href='https://modwsgi.readthedocs.io/en/master/' target=_new>mod_wsgi</a>
-</ul>
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+    this.page.title = "pwapp";
+    this.page.url = "https://grexor.github.io/dockerize.html";
+    this.page.identifier = "blog_pwapp";
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://grexor.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-var disqus_config = function () {
-this.page.title = "pwapp";
-this.page.url = "https://grexor.github.io/dockerize.html";
-this.page.identifier = "blog_pwapp";
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://grexor.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+  </main>
 
 </div>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-<!-- START code highlight part -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+<script src="assets/site.js"></script>
 
-<style>
-    pre code {
-    background: transparent !important;
-    }
-    pre {
-    background: transparent !important;
-    border: none;
-    }
-</style>
-
-<style>
-pre {
-  position: relative;
-}
-.copy-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 2px 6px;
-  font-size: 10px;
-  cursor: pointer;
-  border: 1px dashed gray;
-}
-</style>
-
-<script>
-    document.querySelectorAll(".copy-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const code = btn.nextElementSibling.innerText;
-        navigator.clipboard.writeText(code).then(() => {
-        btn.textContent = "Copied!";
-        setTimeout(() => btn.textContent = "Copy", 1500);
-        });
-    });
-    });
-</script>
-<!-- END code highlight part -->
-
-  </body>
-  </html>
+</body>
+</html>

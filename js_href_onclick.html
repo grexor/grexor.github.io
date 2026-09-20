@@ -1,133 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javascript functions and links &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html">Save the sauna</a>
-  <a href="start_web_dev.html">Start webdev</a>
-  <a href="pubscan.html">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html">Metatarsal</a>
-  <a href="js_href_onclick.html" class="active">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
-    <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
-  
-  <div class="post-date">202105</div>
-  <div class="post-title">Javascript functions and links</div>
-        When you develop a web page with JQuery and Javascript, you probably have several places on the page where you have to connect javascript function links to text or images. Suppose you have a simple javascript function defined:
-<br><br>
-<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
-function open_data(event) {
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
+
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
+
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2021-05</div>
+    <h1 class="page-title">Javascript functions and links</h1>
+
+    <div class="post-content">
+
+<p>
+When you develop a web page with JQuery and Javascript, you probably have several places on the page where you have to connect javascript function links to text or images. Suppose you have a simple javascript function defined:
+</p>
+
+<pre><button class="copy-btn">Copy</button><code>function open_data(event) {
   alert("Open data tab");
-}
-</xmp></code></pre>
+}</code></pre>
 
-        And now you would like this function open_data (which will show/hide some div or something in this direction) to trigger when you click on a link. You could do something like this:
+<p>
+And now you would like this function open_data (which will show/hide some div or something in this direction) to trigger when you click on a link. You could do something like this:
+</p>
 
-<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
-<a href="javascript:open_data(event);">Open Data</a>
-</xmp></code></pre>
+<pre><button class="copy-btn">Copy</button><code>&lt;a href="javascript:open_data(event);"&gt;Open Data&lt;/a&gt;</code></pre>
 
-        When you click on this link, the function open_data is called. This is all good. However, when you mouse-over the "Open Data" text, you will see the link displayed as "javascript:open_data(event)". However, what about opening the data in a new window or sending the link to the data to someone via URL?
+<p>
+When you click on this link, the function open_data is called. This is all good. However, when you mouse-over the "Open Data" text, you will see the link displayed as "javascript:open_data(event)". However, what about opening the data in a new window or sending the link to the data to someone via URL?
+</p>
 
-      <br><br>
+<p><b>expressRNA example</b></p>
+<p>
+If you look at the list of <a href='http://www.expressrna.org/index.html?action=libraries' target="_new">libraries in expressRNA</a>, you can see each library is represented by a unique URL (href, mouse over to see the link). So opening the "example" library is possible using the direct URL <a href='https://expressrna.org/index.html?action=library&library_id=example' target="_new">https://expressrna.org/index.html?action=library&amp;library_id=example</a>.
+</p>
+<p>
+However, when you click on the example library link inside the expressRNA webapp, this does not redirect the browser to the new URL. This would be too heavy. Instead, a javascript function is triggered, which directly shows you the data without reloading the web page (hides some div elements and loads content into the library div element). At the same time, you can right-click on the example library link and "Open in new tab" in the browser or Command-Click on Mac/Windows to open in new tab. This then opens a new window, and reloads the whole expressRNA webapp with the correct data displayed (example library).
+</p>
 
-      <b>expressRNA example</b><br><br>
-      If you look at the list of <a href='http://www.expressrna.org/index.html?action=libraries' target=_new>libraries in expressRNA</a>, you can see each library is represented by a unique URL (href, mouse over to see the link). So opening the "example" library is possible using the direct URL <a href='https://expressrna.org/index.html?action=library&library_id=example' target=_new>https://expressrna.org/index.html?action=library&library_id=example</a>.
-      <br><br>
-      However, when you click on the example library link inside the expressRNA webapp, this does not redirect the browser to the new URL. This would be too heavy. Instead, a javascript function is triggered, which directly shows you the data without reloading the web page (hides some div elements and loads content into the library div element). At the same time, you can right-click on the example library link and "Open in new tab" in the browser or Command-Click on Mac/Windows to open in new tab. This then opens a new window, and reloads the whole expressRNA webapp with the correct data displayed (example library).
+<p><b>How do you achieve the behaviour where command-clicking on a link opens the link URL (href) and simply clicking on a link runs a javascript function?</b></p>
 
-      <br><br>
+<p>The first idea is to do something like this:</p>
+<pre><button class="copy-btn">Copy</button><code>&lt;a href="https://expressRNA.org/data" onclick:open_data(event); return false;"&gt;Open Data&lt;/a&gt;</code></pre>
 
-      <b>How do you achieve the behaviour where command-clicking on a link opens the link URL (href) and simply clicking on a link runs a javascript function?</b><br>
+<p>
+This works great. If you click on the link, the javascript function "open_data" is run. If you right-click and "Open in new tab", the URL "expressRNA.org/data" is open in a new tab. However, if you command-click the link, the thingy doesn't work as expected.
+You need a little bit more logic in the open_data function to catch the command-click events to make it really really nice for the user.
+</p>
 
-        The first idea is to do something like this:
-<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
-<a href="https://expressRNA.org/data" onclick:open_data(event); return false;">Open Data</a>
-</xmp></code></pre>
-
-        This works great. If you click on the link, the javascript function "open_data" is run. If you right-click and "Open in new tab", the URL "expressRNA.org/data" is open in a new tab. However, if you command-click the link, the thingy doesn't work as expected.
-        You need a little bit more logic in the open_data function to catch the command-click events to make it really really nice for the user.
-
-<pre><button class="copy-btn">Copy</button><code class="language-javascript"><xmp>
-function open_data(event, url) {
+<pre><button class="copy-btn">Copy</button><code>function open_data(event, url) {
   if (event.ctrlKey || event.metaKey) {
     window.open(url);
   } else {
     alert("Open data tab");
   }
 }
-<a href="https://expressRNA.org/data" onclick:open_data(event, 'https://expressRNA.org/data'); return false;"></a>
-</xmp></code></pre>
+&lt;a href="https://expressRNA.org/data" onclick:open_data(event, 'https://expressRNA.org/data'); return false;"&gt;&lt;/a&gt;</code></pre>
 
-    And voila. You now have links on your web page that trigger a javascript function when you click them. Still, you can attach a URL to the link (href), where if you "Open in new tab" or command-click the link, a new browser tab is open and the URL is loaded. This is super essential for web apps sharing data, since you would like, for example, to open several analysis and libraries (expressRNA) in different browser tabs, which you would also like to share with colleagues via the URL links.
+<p>
+And voila. You now have links on your web page that trigger a javascript function when you click them. Still, you can attach a URL to the link (href), where if you "Open in new tab" or command-click the link, a new browser tab is open and the URL is loaded. This is super essential for web apps sharing data, since you would like, for example, to open several analysis and libraries (expressRNA) in different browser tabs, which you would also like to share with colleagues via the URL links.
+</p>
 
-    <br><br>Thanks for reading! and if it was helpful for you, leave a comment below.</font>
+<div class="refs">
+<p><b>References</b></p>
+<ul>
+<li><a href='https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window' target="_new">Stackoverflow Open a URL in a new tab</a></li>
+</ul>
+</div>
 
+    </div>
 
-    <br><br>
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2026-05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how NOT to become a robot</a></div></div>
+<div class="post-row"><div class="post-date">2025-12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a></div></div>
+<div class="post-row"><div class="post-date">2025-05</div><div class="post-body"><a href="pubscan.html">pubScan: Explore your scientific co-authorship network</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a></div></div>
+      </div>
+    </div>
 
-    <b>References</b><br><br>
-
-    <ul>
-      
-    <li><a href='https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window' target=_new>Stackoverflow Open a URL in a new tab</a>
-    </ul>
-
-    
     <div id="disqus_thread"></div>
     <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
     var disqus_config = function () {
     this.page.title = "JS";
     this.page.url = "https://grexor.github.io/js_href_onclick.html";
     this.page.identifier = "blog_js_href_onclick";
     };
-    (function() { // DON'T EDIT BELOW THIS LINE
+    (function() {
     var d = document, s = d.createElement('script');
     s.src = 'https://grexor.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
@@ -136,72 +153,25 @@ function open_data(event, url) {
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+  </main>
 
-  </div>
+</div>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-  gtag('config', 'G-714JBVJZEV');
-</script>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+<script src="assets/site.js"></script>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
-
-
-<!-- START code highlight part -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-
-<style>
-    pre code {
-    background: transparent !important;
-    }
-    pre {
-    background: transparent !important;
-    border: none;
-    }
-</style>
-
-<style>
-pre {
-  position: relative;
-}
-.copy-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 2px 6px;
-  font-size: 10px;
-  cursor: pointer;
-  border: 1px dashed gray;
-}
-</style>
-
-<script>
-    document.querySelectorAll(".copy-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const code = btn.nextElementSibling.innerText;
-        navigator.clipboard.writeText(code).then(() => {
-        btn.textContent = "Copied!";
-        setTimeout(() => btn.textContent = "Copy", 1500);
-        });
-    });
-    });
-</script>
-<!-- END code highlight part -->
-
-
-  </body>
-  </html>
+</body>
+</html>

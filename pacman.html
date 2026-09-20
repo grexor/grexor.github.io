@@ -16,7 +16,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="main.css">
 
   <style>
     @font-face {
@@ -25,12 +24,14 @@
     }
 
     body {
-      background: #ffffff;
+      margin: 0;
+      background: #fafafa;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       padding: 20px 10px 40px;
+      font-family: 'IBM Plex Sans', sans-serif;
     }
 
     .top-bar {
@@ -43,13 +44,13 @@
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 13px;
       font-weight: 300;
-      color: #666 !important;
+      color: #67707a !important;
       text-decoration: none;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .top-bar a:hover { color: #aaa !important; }
+    .top-bar a:hover { color: #2b5d8c !important; }
 
     #pacman-wrap {
       width: 100%;
@@ -61,7 +62,7 @@
       font-size: 12px;
       font-weight: 400;
       color: #f7f2e9;
-      background: #444;
+      background: #2b5d8c;
       border: none;
       border-radius: 5px;
       padding: 7px 20px;
@@ -71,7 +72,7 @@
       margin-bottom: 14px;
       transition: background 0.15s;
     }
-    #start-btn:hover { background: #222; }
+    #start-btn:hover { background: #1f4569; }
 
     p.hint {
       font-family: 'IBM Plex Sans', sans-serif;
@@ -88,12 +89,12 @@
 <body>
 
   <div class="top-bar">
-    <a href="index.html">← Back home</a>
+    <a href="index.html">&larr; Back home</a>
   </div>
 
   <button id="start-btn" onclick="PACMAN.start()">Start new game</button>
   <div id="pacman-wrap"></div>
-  <p class="hint">Arrow keys to move &nbsp;·&nbsp; N = new game &nbsp;·&nbsp; S = toggle sound</p>
+  <p class="hint">Arrow keys to move &nbsp;&middot;&nbsp; N = new game &nbsp;&middot;&nbsp; S = toggle sound</p>
   <p class="hint" style="margin-top:28px; color:#aaa;"><a href="https://en.wikipedia.org/wiki/Pac-Man" target="_blank" style="color:#aaa;">About Pac-Man</a></p>
 
   <script src="modernizr-1.5.min.js"></script>

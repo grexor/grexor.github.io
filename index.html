@@ -1,138 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <style>
-    body {
-      background:
-        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-        url('https://www.transparenttextures.com/patterns/cubes.png') #ffffff;
-    }
-  </style>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gregor Rot &#8211; Bioinformatics</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="side-nav">
-  <a href="#"           style="color:#606060;">Whats up?</a>
-  <a href="#research"   style="color:#ff0000;">Research</a>
-  <a href="#social"     style="color:#ff9900;">Social</a>
-  <a href="#education"  style="color:#33cc33;">Education</a>
-  <a href="#blogs"      style="color:#3399ff;">Blogs</a>
-  <a href="#philosophy" style="color:#6f61e8;">Philosophy</a>
-  <a href="#notes"      style="color:#9933cc;">Notes</a>
-  <a href="#software"   style="color:#ff3399;">Software</a>
-</nav>
+<div class="layout">
 
-<div style="max-width: 600px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
-  <div>
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-      <br>
-      <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><b>Gregor Rot</b></div>
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-      <br><br>
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
 
-      <div id="whatsup" class="title" style="color:#606060; border-left-color:#606060;">Whats up?</div>
-      <div class="section-body">#computers #bioinformatics <a href="https://www.goodreads.com/user/show/6452080" target="_gr">#books</a> <a href="https://www.couchsurfing.com/people/rgregor" target="_cs">#couchsurfing</a></div>
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
 
-      <br>
+  <main class="main">
 
-      <div id="research" class="title" style="color:#ff0000; border-left-color:#ff0000;">Bioinformatics Research</div>
-      <div class="section-body">
-        <a href='https://www.cell.com/cell-reports/references/S2211-1247(17)30522-3' target=_poly>alternative polyadenylation</a><br>
-        <a href='https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae121/7735317' target=_splicing>alternative splicing</a><br>
-        <a href='https://www.nature.com/articles/nsmb.1838' target=_clip>RNA-protein binding</a><br>
+    <section class="section" id="research">
+      <div class="section-label"><i class="fas fa-dna"></i>Research</div>
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-code-branch card-icon"></i>
+          <div><h3><a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae121/7735317" target="_blank">Alternative splicing</a></h3><p>Identifying targets and regulatory patterns in short-read RNA-seq</p></div>
+        </div>
+        <div class="card">
+          <i class="fas fa-dna card-icon"></i>
+          <div><h3><a href="https://www.cell.com/cell-reports/references/S2211-1247(17)30522-3" target="_blank">Alternative polyadenylation</a></h3><p>Genome-wide characterization of 3' end diversity</p></div>
+        </div>
+        <div class="card">
+          <i class="fas fa-link card-icon"></i>
+          <div><h3><a href="https://www.nature.com/articles/nsmb.1838" target="_blank">RNA&ndash;protein binding</a></h3><p>Mapping protein interactions across the transcriptome</p></div>
+        </div>
       </div>
-      <br>
+    </section>
 
-      <div id="social" class="title" style="color:#ff9900; border-left-color:#ff9900;">Social</div>
-      <div class="section-body">
-        Videos via ▶️ <a href='http://youtube.com/@grexorai' target=_new>youtube.com/@grexorai</a><br>
-        Publications via <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a> and <a href="https://orcid.org/0009-0001-7888-6687"><img src='img/orcid.logo.icon.svg' height=15 style="padding-right: 5px">ORCID</a><br>
-        Publications network via <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687">pubScan</a><br>
-        Coding adventures at <a href="https://github.com/grexor">GitHub</a><br>
-        Open <a href='https://www.instagram.com/gregor.42/?hl=en/'>Instagram</a> for my foto/video eruptions<br>
-        <a href='https://bsky.app/profile/grexor.bsky.social' target='_bluesky'>Bluesky</a> to follow my latest short texts<br>
-        Find inspiration from my book list using <a href="https://www.goodreads.com/user/show/6452080-gregor">Goodreads</a>
+    <section class="section" id="software">
+      <div class="section-label"><i class="fas fa-code"></i>Software</div>
+      <div class="card-grid">
+        <div class="card">
+          <img src="img/expressrna_logo.png" alt="">
+          <div><h3><a href="https://expressRNA.org" target="_blank">expressRNA</a></h3><p>Transcriptomics bioinformatics platform</p></div>
+        </div>
+        <div class="card">
+          <img src="img/microbeatlas_logo.png" alt="">
+          <div><h3><a href="https://microbeAtlas.org" target="_blank">microbeAtlas</a></h3><p>Microbes on the web</p></div>
+        </div>
+        <div class="card">
+          <img src="img/pubscan_logo.jpg" alt="">
+          <div><h3><a href="https://pubscan.org" target="_blank">pubScan</a></h3><p>Co-authorship networks from PubMed data</p></div>
+        </div>
+        <div class="card">
+          <img src="img/splicekit_logo.png" alt="">
+          <div><h3><a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a></h3><p>Platform for differential splicing analysis</p></div>
+        </div>
+        <div class="card">
+          <img src="img/scanRBP_logo.png" alt="">
+          <div><h3><a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a></h3><p>Scanning for RNA-binding protein motifs</p></div>
+        </div>
+        <div class="card">
+          <img src="img/pybio_logo.png" alt="">
+          <div><h3><a href="https://github.com/grexor/pybio" target="_blank">pybio</a></h3><p>Genome acrobatics, in Python</p></div>
+        </div>
       </div>
-      <br>
+    </section>
 
-      <div id="education" class="title" style="color:#33cc33; border-left-color:#33cc33;">Education</div>
-      <div class="section-body">
-        Msc Computer Science, <a target=_new href="http://www.uni-lj.si">University of Ljubljana</a><br>
-        PhD Bioinformatics, <a target=_new href="http://www.uzh.ch">University of Zurich</a>
+    <section class="section" id="writing">
+      <div class="section-label"><i class="fas fa-pen-nib"></i>Writing</div>
+      <div class="post-list">
+        <div class="post-row"><div class="post-date">2026&#8209;09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a><div class="post-excerpt">Getting treadmill runs into Strava by talking to a Woodway console over Bluetooth FTMS.</div></div></div>
+        <div class="post-row"><div class="post-date">2026&#8209;08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a><div class="post-excerpt">Why Couchsurfing's rebuild broke everything, and why Couchers feels like a better home.</div></div></div>
+        <div class="post-row"><div class="post-date">2026&#8209;05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how not to become a robot</a><div class="post-excerpt">On losing a university sauna, and what it says about optimization culture.</div></div></div>
+        <div class="post-row"><div class="post-date">2025&#8209;12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a><div class="post-excerpt">A from-scratch introduction to building simple web apps.</div></div></div>
+        <div class="post-row"><div class="post-date">2025&#8209;05</div><div class="post-body"><a href="pubscan.html">pubScan co-authorship networks</a><div class="post-excerpt">Visualizing scientific co-authorship networks at PubMed scale.</div></div></div>
+        <div class="post-row"><div class="post-date">2024&#8209;12</div><div class="post-body"><a href="whats_out_there.html">Whats out there: 365 days = 365 posts</a><div class="post-excerpt">A year-long experiment in daily social media posting.</div></div></div>
+        <div class="post-row"><div class="post-date">2023&#8209;01</div><div class="post-body"><a href="splicekit.html">splicekit: a splicing analysis platform</a><div class="post-excerpt">A platform for differential splicing analysis of RNA-seq data.</div></div></div>
+        <div class="post-row"><div class="post-date">2022&#8209;07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a><div class="post-excerpt">Visiting Muralto, and reflecting on Fromm's philosophy.</div></div></div>
+        <div class="post-row"><div class="post-date">2022&#8209;01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a><div class="post-excerpt">Storing compressed JSON blobs in a MySQL database.</div></div></div>
+        <div class="post-row"><div class="post-date">2021&#8209;08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal fracture, a transformative lesson</a><div class="post-excerpt">A year after a foot fracture — on mobility and recovery.</div></div></div>
+        <div class="post-row"><div class="post-date">2021&#8209;05</div><div class="post-body"><a href="js_href_onclick.html">Javascript href, onclick and command-click</a><div class="post-excerpt">Handling href and onclick so command-click still works.</div></div></div>
       </div>
+    </section>
 
-      <br>
-
-      <div id="blogs" class="title" style="color:#3399ff; border-left-color:#3399ff;">Blogs</div>
-      <div class="section-body">
-        <div class="blog-item"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a> <span class="date">(202609)</span></div>
-        <div class="blog-item"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a> <span class="date">(202608)</span></div>
-        <div class="blog-item"><a href="sts.html">Save the sauna, or: how not to become a robot</a> <span class="date">(202605)</span></div>
-        <div class="blog-item"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a> <span class="date">(202512)</span></div>
-        <div class="blog-item"><a href="pubscan.html">pubScan co-authorship networks</a> <span class="date">(202505)</span></div>
-        <div class="blog-item"><a href="whats_out_there.html">Whats out there: 365 days = 365 posts</a> <span class="date">(202412)</span></div>
-        <div class="blog-item"><a href="splicekit.html">splicekit: a splicing analysis platform</a> <span class="date">(202301)</span></div>
-        <div class="blog-item"><a href="ef.html">Erich Fromm: To Have or to Be?</a> <span class="date">(202207)</span></div>
-        <div class="blog-item"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a> <span class="date">(202201)</span></div>
-        <div class="blog-item"><a href="fm.html">Fifth-metatarsal fracture, a transformative lesson</a> <span class="date">(202108)</span></div>
-        <div class="blog-item"><a href="js_href_onclick.html">Javascript href, onclick and command-click</a> <span class="date">(202105)</span></div>
-      </div>
-      <br>
-
-      <div id="philosophy" class="title" style="color:#6f61e8; border-left-color:#6f61e8;">Philosophy</div>
-      <div class="section-body">
+    <section class="section split-two" id="philosophy">
+      <div class="quote-box">
+        <div class="section-label"><i class="fas fa-feather"></i>Philosophy</div>
         <a href="philosophy.html">The truth</a> is rarely pure and never simple.<br>
         Life through <a href="poems.html">poems</a>.
       </div>
-      <br>
+      <div class="quote-box">
+        <div class="section-label"><i class="fas fa-note-sticky"></i>Notes</div>
+        <a href="https://gist.github.com/grexor" target="_blank">Short code notes</a>: IT stuff I use and re-use.
+      </div>
+    </section>
 
-      <div id="notes" class="title" style="color:#9933cc; border-left-color:#9933cc;">Notes</div>
-      <div class="section-body"><a href="https://gist.github.com/grexor">Short code notes</a>: IT stuff I use and re-use.</div>
-
-      <br>
-
-      <div id="software" class="title" style="color:#ff3399; border-left-color:#ff3399;">Software</div>
-      <table border=0>
-      <tr><td style="text-align: right">&nbsp;&nbsp;<a href="https://pubscan.org" target="_pubscan"><img src='img/pubscan_logo.jpg' style="height:16px; padding-right: 5px; margin-left: 1px; margin-top: 1px; margin-bottom: 1px;"></a></td><td><a href="https://pubscan.org" target="_pubscan">pubScan</a>: co-authorship networks</td></tr>
-      <tr><td style="text-align: right">&nbsp;&nbsp;<a href="https://github.com/bedapub/splicekit" target="_splicekit"><img src='img/splicekit_logo.png' style="height:20px; padding-right: 5px; padding-top:1px; padding-bottom: 1px;"></a></td><td><a href="https://github.com/bedapub/splicekit" target="_splicekit">splicekit</a>: analysis of splicing</td></tr>
-      <tr><td style="text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/grexor/scanRBP" target="_scanrbp"><img src='img/scanRBP_logo.png' style="height:18px; padding-right: 5px;"></a></td><td><a href="https://github.com/grexor/scanRBP" target="_scanrbp">scanRBP</a>: RNA-binding proteins</td></tr>
-      <tr><td style="text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/grexor/pybio" target="_pybio"><img src='img/pybio_logo.png' style="height:16px; padding-right: 5px;"></a></td><td><a href="https://github.com/grexor/pybio" target="_pybio">pybio</a>: genome acrobatics</td></tr>
-      <tr><td style="text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://expressRNA.org" target="_ea"><img src='img/expressrna_logo.png' style="height:16px; padding-right: 5px;"></a></td><td><a href="https://expressRNA.org" target="_ea">expressRNA</a>: transcriptomics bioinformatics</td></tr>
-      <tr><td style="text-align: right">&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://microbeAtlas.org" target="_ma"><img src='img/microbeatlas_logo.png' style="height:15px; padding-right: 5px;"></a></td><td><a href="https://microbeAtlas.org" target="_ma">microbeAtlas</a>: microbes on the web!</td></tr>
-      </table>
-    </div>
-
-<div style='font-weight: 100; margin: 0 auto; padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray; max-width: 600px;'>
-  <a href='https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious' target=_serious>When in doubt, remember: the situation is hopeless, but not serious</a>.<br>
-  <a href='https://www.youtube.com/watch?v=8yfEHgvVmXM' target=_new>Creativity is not a talent</a>, <a href='pacman.html'>stay playful</a>.
+  </main>
 </div>
 
-<br>
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
+<script src="assets/site.js"></script>
 
 </body>
 </html>

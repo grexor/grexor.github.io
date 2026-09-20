@@ -1,173 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-    .blog-img { cursor: zoom-in; transition: opacity 0.15s; }
-    .blog-img:hover { opacity: 0.85; }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.82);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-    #lightbox.open { display: flex; }
-    #lightbox img {
-      max-width: 92vw;
-      max-height: 92vh;
-      border-radius: 4px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      cursor: default;
-    }
-    #lightbox-close {
-      position: fixed;
-      top: 18px;
-      right: 24px;
-      color: #fff;
-      font-size: 28px;
-      line-height: 1;
-      cursor: pointer;
-      opacity: 0.7;
-      user-select: none;
-    }
-    #lightbox-close:hover { opacity: 1; }
-  </style>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erich Fromm: To Have or to Be? &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html">Save the sauna</a>
-  <a href="start_web_dev.html">Start webdev</a>
-  <a href="pubscan.html">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html" class="active">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html">Metatarsal</a>
-  <a href="js_href_onclick.html">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
-    <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-  <div class="post-date">202207</div>
-  <div class="post-title">Erich Fromm</div>
-  
-  I discovered <a href='https://en.wikipedia.org/wiki/Erich_Fromm' target=_new>Erich Fromm</a> by coincidence in a bookstore in Cambridge, UK, in 2012 (I think). The book I picked up was <a href='https://en.wikipedia.org/wiki/Escape_from_Freedom' target=_blank>The Fear of Freedom</a>, an amazing expose of how in a sick society, people actually do not want to be free and make decisions of their own, since this requires much more effort and energy compared to just following norms and believes. Fromm goes further and states the obvious: the "healthy" in a sick society are actually the sick (alienated ones), and the sick are the healthy (not completelly robotic and alienated from fellow humans and the environment).
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
 
-        <br><br>
-        This year I had a free weekend and decided to visit Muralto, the place where Fromm spent the last years of his life, living in a modest apartment and writting <a href='https://en.wikipedia.org/wiki/To_Have_or_to_Be%3F' target=_new>To Have or to Be</a>.
-<br><br>
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
 
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2022-07</div>
+    <h1 class="page-title">Erich Fromm: To Have or to Be?</h1>
+
+    <div class="post-content">
+
+<p>
+I discovered <a href='https://en.wikipedia.org/wiki/Erich_Fromm' target="_new">Erich Fromm</a> by coincidence in a bookstore in Cambridge, UK, in 2012 (I think). The book I picked up was <a href='https://en.wikipedia.org/wiki/Escape_from_Freedom' target="_blank">The Fear of Freedom</a>, an amazing expose of how in a sick society, people actually do not want to be free and make decisions of their own, since this requires much more effort and energy compared to just following norms and believes. Fromm goes further and states the obvious: the "healthy" in a sick society are actually the sick (alienated ones), and the sick are the healthy (not completelly robotic and alienated from fellow humans and the environment).
+</p>
+<p>
+This year I had a free weekend and decided to visit Muralto, the place where Fromm spent the last years of his life, living in a modest apartment and writting <a href='https://en.wikipedia.org/wiki/To_Have_or_to_Be%3F' target="_new">To Have or to Be</a>.
+</p>
+<p>
 It was an interesting trip, fishing for building number 4 but I couldn't find it. I asked a little bit around, the neighbours, and they knew Fromm lived there but didn't know in which building. One was demolished and a new one was build there years ago. I found the picture of Fromm walking with Rainer Funk along the street just there, down to the lake.
-
-<br><br>
+</p>
 
 <center>
-<img src=img/ef2.jpeg width=200 class="blog-img">
-<img src=img/ef4.jpeg width=200 class="blog-img"><br>
-<p class="font-weight-light" style='font-size: 12px; color: #000000;'>Muralto apartment block in 202208 (left), Erich Fromm and Rainer Funk in 197903 (right) </a>
+<img src="img/ef2.jpeg" width="200" class="blog-img">
+<img src="img/ef4.jpeg" width="200" class="blog-img"><br>
+<span style='font-size: 12px; color: #666;'>Muralto apartment block in 202208 (left), Erich Fromm and Rainer Funk in 197903 (right)</span>
 </center>
 
+<p>
 The video with Fromm explaining the "to be" and "to have" modes of existence was filmed in that apartment at Muralto.
-<br><br>
-<b>In my opinion one of the most legendary passages is @10:20</b><br><br>
-<b>Q:</b> "You feel that people who live more by the having style, more than the being, they would allow that to take over, to, emm, push out being?"
-<br><br>
-<b>Fromm:</b> "Well, actually, you will find for instance, that it's very difficult for those people who are essentially living in the having structure, of sitting still and doing nothing or even thinking nothing, not talking. They get very anxious after 5 minutes or earlier. Because..., this actually constitutes one very pure form of being...to,...Be. And not to think about anything. And to be quiet and in a peculiar way happy. This is me, here I am, I sit, I see the light. There is no purpose to it. By having, having is always a purpose, getting something. Being in it's last sense has no purpose, just be. And, one could also say, in philosophies or religions based on being, being is that which is sacred. Because in a way being is life as against acting purposefully to make a living, which most people think about because there is nothing else to think about."
-
-<br><br>
+</p>
+<p><b>In my opinion one of the most legendary passages is @10:20</b></p>
+<p><b>Q:</b> "You feel that people who live more by the having style, more than the being, they would allow that to take over, to, emm, push out being?"</p>
+<p><b>Fromm:</b> "Well, actually, you will find for instance, that it's very difficult for those people who are essentially living in the having structure, of sitting still and doing nothing or even thinking nothing, not talking. They get very anxious after 5 minutes or earlier. Because..., this actually constitutes one very pure form of being...to,...Be. And not to think about anything. And to be quiet and in a peculiar way happy. This is me, here I am, I sit, I see the light. There is no purpose to it. By having, having is always a purpose, getting something. Being in it's last sense has no purpose, just be. And, one could also say, in philosophies or religions based on being, being is that which is sacred. Because in a way being is life as against acting purposefully to make a living, which most people think about because there is nothing else to think about."</p>
 
 <center>
-
-  <iframe style='width: 100%; aspect-ratio: 16 / 9;  height: auto; display: block; border: none;' src="https://www.youtube.com/embed/xgZapTBHtnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe style='width: 100%; aspect-ratio: 16 / 9; height: auto; display: block; border: none;' src="https://www.youtube.com/embed/xgZapTBHtnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <br><br>
-  <iframe style='width: 100%; aspect-ratio: 16 / 9;  height: auto; display: block; border: none;' src="https://www.youtube.com/embed/6m84CG5iRf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <br>
-
+  <iframe style='width: 100%; aspect-ratio: 16 / 9; height: auto; display: block; border: none;' src="https://www.youtube.com/embed/6m84CG5iRf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-<br>
+<p>
 And Muralto indeed is a nice place to live, jumping for a swim into the lake, walking around, thinking, talking, being. To be. Here I am, I see the light. There is no purpose to it.
-
-<br><br>
+</p>
 
 <div style="display:flex; gap:16px; justify-content:center; align-items:flex-start;">
-  <div style="text-align:center; font-size:12px; color:#000;">
-    <img src=img/ef3.jpeg class="blog-img" style="height:260px; width:auto; display:block;"><br>
+  <div style="text-align:center; font-size:12px; color:var(--muted);">
+    <img src="img/ef3.jpeg" class="blog-img" style="height:260px; width:auto; display:block;"><br>
     Muralto lakeside
   </div>
-  <div style="text-align:center; font-size:12px; color:#000;">
-    <img src=img/ef1.jpeg class="blog-img" style="height:260px; width:auto; display:block;"><br>
+  <div style="text-align:center; font-size:12px; color:var(--muted);">
+    <img src="img/ef1.jpeg" class="blog-img" style="height:260px; width:auto; display:block;"><br>
     Erich Fromm honorary citizen, Muralto
   </div>
 </div>
 
-<br>Thanks for reading and if it was helpful to you, leave a comment below.
-  <br><br>
+<div class="refs">
+<p><b>References</b></p>
+<ul>
+<li><a href='https://en.wikipedia.org/wiki/To_Have_or_to_Be' target="_new">To Have or to Be?</a></li>
+<li><a href='https://en.wikipedia.org/wiki/Escape_from_Freedom' target="_new">The Fear of Freedom</a></li>
+<li><a href='https://efsc.ipu-berlin.de/en' target="_new">Erich Fromm Study Center</a></li>
+</ul>
+</div>
 
-   <b>References</b><br><br>
-    
-    <ul>
-      <li><a href='https://en.wikipedia.org/wiki/To_Have_or_to_Be' target=_new>To Have or to Be?</a>
-      <li><a href='https://en.wikipedia.org/wiki/Escape_from_Freedom' target=_new>The Fear of Freedom</a>
-      <li><a href='https://efsc.ipu-berlin.de/en' target=_new>Erich Fromm Study Center</a>
-    </ul>
+    </div>
 
-    <br><br>
-      
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2026-05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how NOT to become a robot</a></div></div>
+<div class="post-row"><div class="post-date">2025-12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a></div></div>
+<div class="post-row"><div class="post-date">2025-05</div><div class="post-body"><a href="pubscan.html">pubScan: Explore your scientific co-authorship network</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a></div></div>
+<div class="post-row"><div class="post-date">2021-05</div><div class="post-body"><a href="js_href_onclick.html">Javascript functions and links</a></div></div>
+      </div>
+    </div>
+
     <div id="disqus_thread"></div>
     <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
     var disqus_config = function () {
     this.page.title = "EF2";
     this.page.url = "https://grexor.github.io/ef.html";
     this.page.identifier = "blog_ef2";
     };
-    (function() { // DON'T EDIT BELOW THIS LINE
+    (function() {
     var d = document, s = d.createElement('script');
     s.src = 'https://grexor.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
@@ -176,48 +150,25 @@ And Muralto indeed is a nice place to live, jumping for a swim into the lake, wa
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-  </div>
+  </main>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+</div>
 
-  gtag('config', 'G-714JBVJZEV');
-</script>
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
+<script src="assets/site.js"></script>
 
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-
-  <script>
-    var lb    = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lightbox-img');
-
-    document.querySelectorAll('img.blog-img').forEach(function(img) {
-      img.addEventListener('click', function() {
-        lbImg.src = img.src;
-        lb.classList.add('open');
-      });
-    });
-
-    function close() { lb.classList.remove('open'); lbImg.src = ''; }
-    lb.addEventListener('click', close);
-    document.getElementById('lightbox-close').addEventListener('click', close);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
-  </script>
-
-  </body>
-  </html>
+</body>
+</html>

@@ -1,229 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-    .blog-img { cursor: zoom-in; transition: opacity 0.15s; }
-    .blog-img:hover { opacity: 0.85; }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.82);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-    #lightbox.open { display: flex; }
-    #lightbox img {
-      max-width: 92vw;
-      max-height: 92vh;
-      border-radius: 4px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      cursor: default;
-    }
-    #lightbox-close {
-      position: fixed;
-      top: 18px;
-      right: 24px;
-      color: #fff;
-      font-size: 28px;
-      line-height: 1;
-      cursor: pointer;
-      opacity: 0.7;
-      user-select: none;
-    }
-    #lightbox-close:hover { opacity: 1; }
-  </style>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fifth-metatarsal Fracture, a transformative lesson &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html">Save the sauna</a>
-  <a href="start_web_dev.html">Start webdev</a>
-  <a href="pubscan.html">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html" class="active">Metatarsal</a>
-  <a href="js_href_onclick.html">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-<div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
-<div class="post-date">202108</div>
-<div class="post-title">Fifth-metatarsal Fracture, a transformative lesson</div>
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
 
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2021-08</div>
+    <h1 class="page-title">Fifth-metatarsal Fracture, a transformative lesson</h1>
+
+    <div class="post-content">
+
+<p>
 This August it has been 1 year since my fifth-metatarsal fracture. It happened very simply. Someone landed on my foot while we were playing basketball and things drastically changed the next 3 (to 6) months of my life. Doing a scan in the hospital, the doctor on duty said: looks not bad, just don't do heavy hiking haha. Then he came back 5 minutes later more concerned and said we need to do more x-rays. And so, instead of the planned 3 week vacation starting next day the situation turned into 6 weeks of moving around with cast and crutches and absolute no-no for putting any weight on the foot. Even with all this measures, the outcome was uncertain and it was impossible to predict if I would need an operation afterwards with another 6 weeks of cast and 3-months recovery. In fact, the scans after 1 and 2 weeks showed the bone was not healing at all. In retrospect I learned this was a "conservative" treatment for such fractures. A more drastic (and faster in terms of recovery) approach is to just operate. However, operations have their own risks etc., so in literature, there is no clear judgement what works best.
-<br><br>
-The <a href='https://orthopaedia.com/page/Anatomy-of-the-Foot-Ankle' targer=_new>human foot</a> is a marvelous, complicated and very efficient combination of bones, ligaments and muscles.
+</p>
+<p>
+The <a href='https://orthopaedia.com/page/Anatomy-of-the-Foot-Ankle' target="_new">human foot</a> is a marvelous, complicated and very efficient combination of bones, ligaments and muscles.
 And the base of the fifth-metatarsal bone is indeed very small but if broken, it is also very tricky to heal, due to the low blood supply to the bone. Moreover, it is one of the 3 points where all your body weight is pressing down when you walk or stand or run.
-<br><br>
+</p>
 
 <center>
-<img src=img/fm1.png class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
-Source: <a href='https://upswinghealth.com/conditions/fifth-metatarsal-fractures/' target=_new>https://upswinghealth.com/conditions/fifth-metatarsal-fractures/</a>
+<img src="img/fm1.png" class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
+<span style='font-size: 12px; color: #666;'>Source: <a href='https://upswinghealth.com/conditions/fifth-metatarsal-fractures/' target="_new">https://upswinghealth.com/conditions/fifth-metatarsal-fractures/</a></span>
 </center>
 
-<br>
-
+<p>
 Of course by lying in bed or sitting in a chair and with a swallen foot that needed to be lifted most of the time, I didn't have the will to even do much work. It was a logistic nightmare to even make coffee, since not being allowed resting/touching the floor with the foot and moving around with crutches, doing the simplest tasks in the kitchen becomes almost impossible. And you can't carry things around, you have no free hands. I seriously understood how important mobility is. And how detrimental and incapacitated you can be even with a cast on a broken foot that you can't rest on the ground. I value mobility now much more then I would ever think possible.
-<br><br>
+</p>
 
 <center>
-<img src=img/fm2.jpeg class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
-Source: myself
+<img src="img/fm2.jpeg" class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
+<span style='font-size: 12px; color: #666;'>Source: myself</span>
 </center>
 
-<br>
-
+<p>
 And like every fool that get's an injury or illness I did my research. I knew more about fifth-metatarsal treatment then the doctors I was seeing, or at least I thought I knew more. In fact, I did the most stupid thing one in my situation could do. I had thousands of questions and fears and worries and I read around 50 peer-reviewed articles on different fracture types. To be honest, in the end I self-diagnosed myself and knew pretty well what happened to me, but the thing I was lacking was knowledge on how the future would look like for me. This kind of knowledge only an experienced doctor who sees hundreds of these fractures can discuss, no book or paper could help me.
-<br><br>
+</p>
 
 <center>
-<img src=img/fm3.jpeg class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
-New shoe
+<img src="img/fm3.jpeg" class="blog-img" style='max-width: 380px; border-radius: 20px;'><br>
+<span style='font-size: 12px; color: #666;'>New shoe</span>
 </center>
 
-<br>
-
+<p>
 Time was passing by and I was surprised to realize how difficult it would be to get relevant information. The main advice was very simple: we can do nothing but wait 6 weeks and then see what happens. So I waited and we removed the cast after 6 weeks. The foot was painful to walk on, they gave me a hard-sole for the shoe and told me to walk as much as I wanted. Still the pain was there and I didn't know where this would go. Come back after another 6-weeks post cast removal (12-week post-incident) was the main instruction, but no serious answers on any possible outcomes. Yes, I asked many questions, but there were no serious answers, which was very very frustrating.
-<br><br>
-
+</p>
+<p>
 I finally managed to get proper treatment at a specialized clinic and the surgeon looking at my CT scans (10 weeks post injury) told me in 5 minutes everything that I already somehow knew from the literature I was reading. And also told me: "it will heal, throw away the shoe implant and walk as normally as you can. You can run, you can dance, it may come to haunth you when you are older but don't worry. I wouldn't operate it since nerve damage is very likely and it can make it much worse."
-<br><br>
-
+</p>
+<p>
 That was all it took to make my mind more at peace and accept the situation. It would be beneficial if someone could tell me this like at the beginning not at the end. Overall, it took 6 months after the injury for me to forget about it during some of the days, and today 1 year later I can say I don't think about it mostly and only notice it during bad weather, but can move around normally, even do 1h of running and a whole day of bicycle. If it stays like that, I am happy.
-<br><br>
-
+</p>
+<p>
 I can say I learned a lot and mostly about myself. Looking in retrospect, I am a theoretical expert on fifth-metatarsal fractures now, but this didn't change my situation. Even if I would not read any papers or documents, the outcome would be the same, and perhaps I would avoid some of the not-knowing-what-happens anxiety. But we are as we are, we want to know as much as possible and I don't regret it. Better to be knowledgeable than to be ignorant. It was just a very painful process (mostly because of lack of info), and a lot of the pain could have been avoided if I did get serious and proper evaluation and advice from the beginning.
-<br><br>
-
+</p>
+<p>
 This experience was also a push to change priorities and some behaviours in life. It was the start of the end of a relationship that was not working anymore and crisis of course always precipitate such developments. It was also the realization that some friendships were actually not there anymore and some friendships are there despite lack of contact.
-<br><br>
-
+</p>
+<p>
 I think it was all for the best and it taught me to value myself, value good relationships and friendships and not to spend much time on trying to please and keep connections that do not work at all. It also made me realize and value mobility. A strong push to take better care of my body and also mental health. Avoiding destructive behaviours. A painful but all in all beneficial and transformative experience.
-<br><br>
-
+</p>
+<p>
 Do take advantage of the opporunities you have in life. If you can walk, walk, you can hike? hike, can run? run. Or go around by some other means.
-
-<br><br>
-
+</p>
+<p>
 Mobility is not only physical, it's also about your mental landscape. Be mobile in the mind, if something doesn't work, find other paths, you can travel in your mind and be active in searching new solutions to old problems. Don't be silly, don't be a fool. Move your body. Move your mind.
+</p>
 
-<br><br><font color=gray>Thanks for reading and if it was helpful to you, leave a comment below.</font>
-
-<br><br>
-
-<b>References</b><br>
+<div class="refs">
+<p><b>References</b></p>
 <ul>
-<li><a href='https://upswinghealth.com/conditions/fifth-metatarsal-fractures/' target=_new>Fifth Metatarsal Fractures</a>
-<li><a href='https://www.foothealthfacts.org/conditions/fractures-of-the-fifth-metatarsal' target=_new>Fractures of the Fifth Metatarsal</a>
-<li><a href='https://www.hindawi.com/journals/bmri/2017/1397252/' target=_new>Effect of Weight-Bearing in Conservative and Operative Management of Fractures of the Base of the Fifth Metatarsal Bone</a>
-<li><a href='https://www.nytimes.com/2019/03/08/health/foot-bone-fracture.html' target=_new>We Broke the Same Bone. My Recovery Was a Breeze, Hers an Ordeal. Why?</a>
-<li><a href='https://coreem.net/core/jones-fractures/' target=_new>Jones Fractures</a>
-<li><a href='https://www.uptodate.com/contents/proximal-fifth-metatarsal-fractures#H7' target=_new>Proximal fifth metatarsal fractures</a>
+<li><a href='https://upswinghealth.com/conditions/fifth-metatarsal-fractures/' target="_new">Fifth Metatarsal Fractures</a></li>
+<li><a href='https://www.foothealthfacts.org/conditions/fractures-of-the-fifth-metatarsal' target="_new">Fractures of the Fifth Metatarsal</a></li>
+<li><a href='https://www.hindawi.com/journals/bmri/2017/1397252/' target="_new">Effect of Weight-Bearing in Conservative and Operative Management of Fractures of the Base of the Fifth Metatarsal Bone</a></li>
+<li><a href='https://www.nytimes.com/2019/03/08/health/foot-bone-fracture.html' target="_new">We Broke the Same Bone. My Recovery Was a Breeze, Hers an Ordeal. Why?</a></li>
+<li><a href='https://coreem.net/core/jones-fractures/' target="_new">Jones Fractures</a></li>
+<li><a href='https://www.uptodate.com/contents/proximal-fifth-metatarsal-fractures#H7' target="_new">Proximal fifth metatarsal fractures</a></li>
 </ul>
-<br><br>
+</div>
 
-<div id="disqus_thread"></div>
-<script>
+    </div>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-var disqus_config = function () {
-this.page.title = "FM";
-this.page.url = "https://grexor.github.io/fm.html";
-this.page.identifier = "blog_fm";
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://grexor.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2026-05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how NOT to become a robot</a></div></div>
+<div class="post-row"><div class="post-date">2025-12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a></div></div>
+<div class="post-row"><div class="post-date">2025-05</div><div class="post-body"><a href="pubscan.html">pubScan: Explore your scientific co-authorship network</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-05</div><div class="post-body"><a href="js_href_onclick.html">Javascript functions and links</a></div></div>
+      </div>
+    </div>
 
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+    this.page.title = "FM";
+    this.page.url = "https://grexor.github.io/fm.html";
+    this.page.identifier = "blog_fm";
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://grexor.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
 
 </div>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-  gtag('config', 'G-714JBVJZEV');
-</script>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+<script src="assets/site.js"></script>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
-
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-
-  <script>
-    var lb    = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lightbox-img');
-
-    document.querySelectorAll('img.blog-img').forEach(function(img) {
-      img.addEventListener('click', function() {
-        lbImg.src = img.src;
-        lb.classList.add('open');
-      });
-    });
-
-    function close() { lb.classList.remove('open'); lbImg.src = ''; }
-    lb.addEventListener('click', close);
-    document.getElementById('lightbox-close').addEventListener('click', close);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
-  </script>
-
-  </body>
-  </html>
+</body>
+</html>

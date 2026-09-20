@@ -1,90 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pubScan: Explore your scientific co-authorship network &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html">Save the sauna</a>
-  <a href="start_web_dev.html">Start webdev</a>
-  <a href="pubscan.html" class="active">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html">Metatarsal</a>
-  <a href="js_href_onclick.html">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-<div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
-<div class="post-date">202505</div>
-<div class="post-title"><a href='https://pubscan.org' target=_new'>pubScan</a>: Explore your scientific co-authorship network</div>
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
 
-Available at: <a href="https://pubscan.org" target=_new>https://pubscan.org</a>
-<br><br>
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
 
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2025-05</div>
+    <h1 class="page-title"><a href='https://pubscan.org' target='_new'>pubScan</a>: Explore your scientific co-authorship network</h1>
+
+    <div class="post-content">
+
+<p>Available at: <a href="https://pubscan.org" target="_new">https://pubscan.org</a></p>
+
+<p>
 During end of 2024 in winter I was parsing and creating some visualizations on a small scale for visualizing the co-publication network for selected scientists. It was pretty fast and all the data was stored locally (being parsed over API from PubMed).
+</p>
 
-<br><br>
-
+<p>
 And then, I had an idea that it would be really cool to be able to search for any author and visualize the co-publication network. However to reach that kind of goal, ABC challenges popped up :-)
+</p>
 
-<br><br><b>Challenge A</b><br>The parsing over PubMed was not an option anymore, since my code would retrieve all publications of the center author (the auther that the user searches for), find all co-authors on those publications, and then also retrieve all the publications for these co-authors.
+<p><b>Challenge A</b><br>
+The parsing over PubMed was not an option anymore, since my code would retrieve all publications of the center author (the auther that the user searches for), find all co-authors on those publications, and then also retrieve all the publications for these co-authors.
 Not only was this too slow over the API, it was also not the way to go, one never should "attach" oneself to APIs like that if there are other options.
+</p>
 
-<br><br><b>Solution A</b><br>
-PubMed provides XML files for all the publications stored in their database. The main files are called <a href='https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/' target="_new">PubMed baseline</a>, and then there are montly updates called <a href='ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/' target=_new>PubMed updatefiles</a>. So the data I could get and store locally on the server, but how to make it searchable, by PMID and by author name, and in a very fast way?
-<br>I tried several things, parsing the XML and storing PMID records into a file and author to PMIDs records into another file, and then searching with <b>grep</b>. This worked reasonably well up to a certain size of files however in the end was not feasible. I turned to Mysql, created two tables,
+<p><b>Solution A</b><br>
+PubMed provides XML files for all the publications stored in their database. The main files are called <a href='https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/' target="_new">PubMed baseline</a>, and then there are montly updates called <a href='ftp://ftp.ncbi.nlm.nih.gov/pubmed/updatefiles/' target="_new">PubMed updatefiles</a>. So the data I could get and store locally on the server, but how to make it searchable, by PMID and by author name, and in a very fast way?
+I tried several things, parsing the XML and storing PMID records into a file and author to PMIDs records into another file, and then searching with <b>grep</b>. This worked reasonably well up to a certain size of files however in the end was not feasible. I turned to Mysql, created two tables,
 <b>mysqk:authors</b> and <b>mysql:publications</b>. After doing some indexing and debugging XML parsing (ah!), I got a database that I would search two ways: either search for an author (full name) and get all the authors PMIDs, or search for a PMID and get all the information related to a specific publication.
-<br>However, the user would start typing the author name in the browser and I also needed a <b>name matching</b> method, so the names that would be suggested to the user would be the ones present in the pubScan (=PubMed) database. Leaving aside the problem that authors do not have unique IDs in PubMed, still I needed a way to match names. And here, simply writting all the names in a file (one per line) and then using <b>grep (with -E and some additional tricks)</b> proved to be working well.
+However, the user would start typing the author name in the browser and I also needed a <b>name matching</b> method, so the names that would be suggested to the user would be the ones present in the pubScan (=PubMed) database. Leaving aside the problem that authors do not have unique IDs in PubMed, still I needed a way to match names. And here, simply writting all the names in a file (one per line) and then using <b>grep (with -E and some additional tricks)</b> proved to be working well.
+</p>
 
+<p><b>Challenge B</b><br>
+The size of the network for some authors was just too large. I realized the <a href='https://visjs.org/' target="_new">vis.js</a> component I was using was ideal for displaying 150-200 nodes and max 3-5K edges, for the network to be still clickable and responsive.
+</p>
 
-<br><br><b>Challenge B</b><br>The size of the network for some authors was just too large. I realized the <a href='https://visjs.org/' target=_new>vis.js</a> component I was using was ideal for displaying 150-200 nodes and max 3-5K edges, for the network to be still clickable and responsive.
+<p><b>Solution B</b><br>
+To keep the size of the network manageable, pubScan shows a maximum of 150 co-authors (based on number of shared publications with main author). Additionally, up to 2,000 edges are included. This includes all edges between the main author and its co-authors plus the 100 strongest co-authorship links. If the edges in this case are &lt;2000, a random sample of the remaining edges is added.
+</p>
 
-<br><br><b>Solution B</b><br>
-To keep the size of the network manageable, pubScan shows a maximum of 150 co-authors (based on number of shared publications with main author). Additionally, up to 2,000 edges are included. This includes all edges between the main author and its co-authors plus the 100 strongest co-authorship links. If the edges in this case are <2000, a random sample of the remaining edges is added.
+<p><b>Challenge C</b><br>
+The loading of all the data (stored locally on my server) would still take a few seconds, or even up to 10 seconds for very large networks, so I needed some way to stream the process, meaning the user would need to see progress of the download (construction) of the network.
+</p>
 
-<br><br><b>Challenge C</b><br>The loading of all the data (stored locally on my server) would still take a few seconds, or even up to 10 seconds for very large networks, so I needed some way to stream the process, meaning the user would need to see progress of the download (construction) of the network.
-
-<br><br><b>Solution C</b><br>
-
+<p><b>Solution C</b><br>
 Here the solution was streaming, so one single call to the server API from the browser client generates the response "in steps", and each step trigers an update on the client side (visual display of progress in the browser for example).
+</p>
 
-<pre><button class="copy-btn">Copy</button><code class="language-javascript">
-# streaming on the client side using fetch
+<pre><button class="copy-btn">Copy</button><code># streaming on the client side using fetch
 function get_publications(pmids) {
     let encodedQuery = encodeURIComponent(pmids);
     const datetime = new Date().toISOString();
@@ -101,109 +118,78 @@ function get_publications(pmids) {
                     return;
                 }
                 buffer += decoder.decode(value, { stream: true });
-                let parts = buffer.split("\n");  
+                let parts = buffer.split("\n");
                 buffer = parts.pop();  // Keep the last incomplete part in buffer
                 for (const part of parts) {
                     try {
                         const mydata = JSON.parse(part);
-                        ...
-</code></pre>
+                        ...</code></pre>
 
-<pre><button class="copy-btn">Copy</button><code class="language-python">
-# streaming on the server side with mod_wsgy using yield
+<pre><button class="copy-btn">Copy</button><code># streaming on the server side with mod_wsgy using yield
 class TableClass():
 ...
 def get_data(...):
    test = {"instruction": "progress", "description": f"found {len(pmids)} publications for {center_name}"}
    yield self.return_string(json.dumps(test)+"\n")
-   sys.stdout.flush()
-</code></pre>
+   sys.stdout.flush()</code></pre>
 
+<p>
 Complete code available on <a href='https://github.com/grexor/pubscan' target='_github_pubscan'>pubScan Github</a>.
+</p>
 
-<br><br><font color=gray>Thanks for reading and if it was helpful to you, leave a comment below.</font>
+    </div>
 
-<br><br>
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2026-05</div><div class="post-body"><a href="sts.html">Save the sauna, or: how NOT to become a robot</a></div></div>
+<div class="post-row"><div class="post-date">2025-12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a></div></div>
+<div class="post-row"><div class="post-date">2021-05</div><div class="post-body"><a href="js_href_onclick.html">Javascript functions and links</a></div></div>
+      </div>
+    </div>
 
-<b>References</b><br>
-<ul><br>
-<li><a href='https://pubscan.org' target=_new>pubScan: Explore your scientific co-authorship network</a>
-</ul>
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+    this.page.title = "pubScan";
+    this.page.url = "https://grexor.github.io/pubscan.html";
+    this.page.identifier = "blog_pubscan";
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://grexor.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-var disqus_config = function () {
-this.page.title = "FM";
-this.page.url = "https://grexor.github.io/pubscan.html";
-this.page.identifier = "blog_pubscan";
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://grexor.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+  </main>
 
 </div>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-<!-- START code highlight part -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+<script src="assets/site.js"></script>
 
-<style>
-    pre code {
-    background: transparent !important;
-    }
-    pre {
-    background: transparent !important;
-    border: none;
-    }
-</style>
-
-<style>
-pre {
-  position: relative;
-}
-.copy-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 2px 6px;
-  font-size: 10px;
-  cursor: pointer;
-  border: 1px dashed gray;
-}
-</style>
-
-<script>
-    document.querySelectorAll(".copy-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const code = btn.nextElementSibling.innerText;
-        navigator.clipboard.writeText(code).then(() => {
-        btn.textContent = "Copied!";
-        setTimeout(() => btn.textContent = "Copy", 1500);
-        });
-    });
-    });
-</script>
-<!-- END code highlight part -->
-
-  </body>
-  </html>
+</body>
+</html>

@@ -1,107 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-714JBVJZEV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-714JBVJZEV');
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <meta charset="utf-8">
-  <meta name="keywords" content="bioinformatics, expressrna, microbeatlas"/>
-  <title>Gregor Rot &#8211; Bioinformatics</title>
-  <meta name="robots" content="noarchive">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Gregor Rot" />
-  <meta property="og:description" content="Bioinformatics" />
-  <meta property="og:url" content="https://grexor.github.io" />
-  <meta property="og:site_name" content="Gregor Rot" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-    .blog-img { cursor: zoom-in; transition: opacity 0.15s; }
-    .blog-img:hover { opacity: 0.85; }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.82);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-    #lightbox.open { display: flex; }
-    #lightbox img {
-      max-width: 92vw;
-      max-height: 92vh;
-      border-radius: 4px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      cursor: default;
-    }
-    #lightbox-close {
-      position: fixed;
-      top: 18px;
-      right: 24px;
-      color: #fff;
-      font-size: 28px;
-      line-height: 1;
-      cursor: pointer;
-      opacity: 0.7;
-      user-select: none;
-    }
-    #lightbox-close:hover { opacity: 1; }
-  </style>
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Save the sauna, or: how NOT to become a robot &#8211; Gregor Rot</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav class="blog-nav">
-  <a href="index.html">← Back home</a>
-  <a href="running_woodway_ftms.html">Running, Woodway, FTMS</a>
-  <a href="couchers.html">Goodbye Couchsurfing</a>
-  <a href="sts.html" class="active">Save the sauna</a>
-  <a href="start_web_dev.html">Start webdev</a>
-  <a href="pubscan.html">pubScan</a>
-  <a href="whats_out_there.html">Whats out there</a>
-  <a href="splicekit.html">splicekit</a>
-  <a href="ef.html">Erich Fromm</a>
-  <a href="mysql_binary.html">Mysql binary</a>
-  <a href="fm.html">Metatarsal</a>
-  <a href="js_href_onclick.html">JS onclick</a>
-</nav>
+<div class="layout">
 
+  <aside class="sidebar">
+    <a href="index.html" class="avatar-ring"><img class="avatar" src="img/profile.jpg" alt="Gregor Rot"></a>
+    <h1><a href="index.html">Gregor Rot</a></h1>
+    <p class="role">Bioinformatics Scientist &amp; Software Developer</p>
+    <p class="location"><i class="fas fa-location-dot"></i>Zürich, Switzerland</p>
 
-<div style="max-width: 720px; margin: 0 auto; padding-left: 10px; padding-right: 10px;">
-    <div style="border-bottom: 1px dashed lightgray;" class="rainbow-text"><a href="index.html">Home</a></div>
+    <div class="tags">
+      <a class="tag" href="index.html#research">#bioinformatics</a>
+      <a class="tag" href="index.html#software">#computers</a>
+      <a class="tag" href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank">#books</a>
+      <a class="tag" href="https://couchers.org/user/grexor" target="_blank">#couchers</a>
+    </div>
 
-  <div class="post-date">202605</div>
-  <div class="post-title">Save the sauna, or: how NOT to become a robot</div>
+    <p class="bio">
+      Bioinformatician studying RNA: alternative splicing, alternative polyadenylation, and interactions between RNA and proteins. I build the software and web apps behind it, including
+      <a href="https://expressRNA.org" target="_blank">expressRNA</a>,
+      <a href="https://github.com/bedapub/splicekit" target="_blank">splicekit</a>,
+      <a href="https://github.com/grexor/pybio" target="_blank">pybio</a> and
+      <a href="https://github.com/grexor/scanRBP" target="_blank">scanRBP</a>.
+    </p>
+    <div class="edu">
+      <div><i class="fas fa-graduation-cap"></i><span>MSc Computer Science<br><a href="http://www.uni-lj.si" target="_blank">University of Ljubljana</a></span></div>
+      <div><i class="fas fa-graduation-cap"></i><span>PhD Bioinformatics<br><a href="http://www.uzh.ch" target="_blank">University of Zurich</a></span></div>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/grexor" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://scholar.google.si/citations?hl=en&user=Mzz8rBAAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://orcid.org/0009-0001-7888-6687" target="_blank" title="ORCID"><img src="img/orcid.logo.icon.svg" alt="ORCID"></a>
+      <a href="https://pubscan.org/Gregor_Rot_0009-0001-7888-6687" target="_blank" title="pubScan network"><i class="fas fa-diagram-project"></i></a>
+      <a href="https://bsky.app/profile/grexor.bsky.social" target="_blank" title="Bluesky"><i class="fab fa-bluesky"></i></a>
+      <a href="https://www.linkedin.com/in/gregorrot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/gregor.42/?hl=en/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="http://youtube.com/@grexorai" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.goodreads.com/user/show/6452080-gregor" target="_blank" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+    </div>
+
+    <nav class="side-nav">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#philosophy">Philosophy &amp; notes</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="crumbs"><a href="index.html">&larr; Home</a></div>
+    <div class="page-date">2026-05</div>
+    <h1 class="page-title">Save the sauna, or: how NOT to become a robot</h1>
+
+    <div class="post-content">
 
 <p>
 Before writing this post, I pause for a minute and think about the sauna that is no more at <a href='https://ethz.ch' target="_new">ETH Honggerberg</a>. I tried my best to save it, we tried to save it, but it was not meant to be. So the beautiful sauna at ETH Honggerberg is gone, removed and replaced by fitness machines. The sauna at <a href='https://uzh.ch' target="_new">UZH</a> Irchel campus and Fluntern had already disappeared years ago. The Honggerberg sauna was the last sauna of the <a href='https://www.asvz.ch/' target="_new">ASVZ academic sports organisation</a>, which means there is now no wellness infrastructure left at Zurich's universities.
 </p>
 
 <p>
-All students in Switzerland are automatically members of ASVZ, funded through tuition fees. ASVZ is an amazing and one-of-a-kind institution, maintaining sports infrastructure and offering all sorts of classes for students, staff and alumni. In many ways, it feels like a rare example of public sports policy done right, almost reminds me a little bit of the Yugoslav sports organization Partizan+Sokol: accessible, collective, subsidized, for everyone. And up to last winter, one could work out, run, and then jump into the wellness world and relax for an hour or two. Yes. Perhaps it was too good to be true, but then again - why should it be? Shouldn’t environments become more supportive of human wellbeing rather than less? The ASVZ motto is: for brain, body, and soul. Body. And soul.
+All students in Switzerland are automatically members of ASVZ, funded through tuition fees. ASVZ is an amazing and one-of-a-kind institution, maintaining sports infrastructure and offering all sorts of classes for students, staff and alumni. In many ways, it feels like a rare example of public sports policy done right, almost reminds me a little bit of the Yugoslav sports organization Partizan+Sokol: accessible, collective, subsidized, for everyone. And up to last winter, one could work out, run, and then jump into the wellness world and relax for an hour or two. Yes. Perhaps it was too good to be true, but then again - why should it be? Shouldn&rsquo;t environments become more supportive of human wellbeing rather than less? The ASVZ motto is: for brain, body, and soul. Body. And soul.
 </p>
 
 <p>
-Now, in spring, memories of cold and rainy winter return through memories of the sauna. I try to understand why this place of culture, silence, reading (many people read books in the quiet area), and rest had to disappear, and how ETH, ASVZ, and society more broadly allowed it. When the closure was announced, the reaction was immediate disbelief: “Really? But why?” We created a petition, <a href='https://save-the-sauna.ch' target=_new'>save-the-sauna.ch</a>, now signed by more than 600 people. One comment said: “The sauna is one of the few places at ETH dedicated to relaxation rather than stress.” Even if there were no proven health benefits at all, that would still not be the point. A sauna is a space of wellbeing without productivity, and that alone should be enough reason to keep it. Why are such spaces disappearing?
+Now, in spring, memories of cold and rainy winter return through memories of the sauna. I try to understand why this place of culture, silence, reading (many people read books in the quiet area), and rest had to disappear, and how ETH, ASVZ, and society more broadly allowed it. When the closure was announced, the reaction was immediate disbelief: &ldquo;Really? But why?&rdquo; We created a petition, <a href='https://save-the-sauna.ch' target="_new">save-the-sauna.ch</a>, now signed by more than 600 people. One comment said: &ldquo;The sauna is one of the few places at ETH dedicated to relaxation rather than stress.&rdquo; Even if there were no proven health benefits at all, that would still not be the point. A sauna is a space of wellbeing without productivity, and that alone should be enough reason to keep it. Why are such spaces disappearing?
 </p>
 
 <p>
@@ -121,7 +92,8 @@ It's not space. What is behind these policies then?
 </p>
 
 <p>
-One of my favourite philosophers, the amazing <a href="https://www.youtube.com/@filosofiaapplicata" target="_blank">Umberto Galimberti</a>, often describes in his talks and books, how we are living in the era of the technical system, one could say a technocracy, where everything we do has the scope of furthering (pushing to the limit) and optimizing (not improving) the system with higher profits as ends. Technocracy — where nearly everything becomes subordinate to optimization, efficiency, and performance. Profits here can be any form of output / advantage / gain.  Worldwide, universities (and schools in general) are becoming more and more services for the economic system we are living in. The schooling system in general is less and less a system of education, but of training of people to become well functioning elements in the technocratic aparatus. In this light, also the economy is changing, and we are becoming more and more (as <a href="https://en.wikipedia.org/wiki/Yanis_Varoufakis" target="_blank">Varoufakis</a> would say), in the service of our new lords, the techno-feudalists.
+One of my favourite philosophers, the amazing <a href="https://www.youtube.com/@filosofiaapplicata" target="_blank">Umberto Galimberti</a>, often describes in his talks and books, how we are living in the era of the technical system, one could say a technocracy, where everything we do has the scope of furthering (pushing to the limit) and optimizing (not improving) the system with higher profits as ends. Technocracy &mdash; where nearly everything becomes subordinate to optimization, efficiency, and performance. Profits here can be any form of output / advantage / gain. Worldwide, universities (and schools in general) are becoming more and more services for the economic system we are living in. The schooling system in general is less and less a system of education, but of training of people to become well functioning elements in the technocratic aparatus. In this light, also the economy is changing, and we are becoming more and more (as <a href="https://en.wikipedia.org/wiki/Yanis_Varoufakis" target="_blank">Varoufakis</a> would say), in the service of our new lords, the techno-feudalists.
+</p>
 
 <p>
 In such systems, institutions increasingly orient themselves not around human flourishing, but around metrics, outputs, and growth. At very good universities, this fact is reflecting more and more the paper-grant-money paradigm: a lot of "science" for the sake of papers in high ranking journals, the papers for the sake of grants, the grants for the sake of employing people that will write papers that will get grants that will bring in money to employ people to do "science". What emerges is something like a techno-university: publicly funded, but operating with corporate logic. Structured like a corporation, measured like a corporation, optimized like a corporation.
@@ -143,7 +115,7 @@ The social agreement in the past could have sounded like this: we establish univ
 </p>
 
 <p>
-But let’s think about what it really means to behave like a corporation. Taken to its extreme, it means doing things only to gain something — constantly optimizing performance, efficiency, and output. Every action must serve a purpose: to sell, to compete, to generate profit on the market. Everything becomes instrumental. Pushed far enough, this philosophy turns even the most basic human acts into questions of productivity. Even going to the toilet must justify itself: we need you working, and if you absolutely need to pee in order to keep performing, then — reluctantly — <a href='https://www.just-food.com/news/argentina-supermarket-checkout-staff-forced-to-wear-nappies-reports/' target="_new">permission granted</a>.
+But let&rsquo;s think about what it really means to behave like a corporation. Taken to its extreme, it means doing things only to gain something &mdash; constantly optimizing performance, efficiency, and output. Every action must serve a purpose: to sell, to compete, to generate profit on the market. Everything becomes instrumental. Pushed far enough, this philosophy turns even the most basic human acts into questions of productivity. Even going to the toilet must justify itself: we need you working, and if you absolutely need to pee in order to keep performing, then &mdash; reluctantly &mdash; <a href='https://www.just-food.com/news/argentina-supermarket-checkout-staff-forced-to-wear-nappies-reports/' target="_new">permission granted</a>.
 </p>
 
 <p>
@@ -163,13 +135,13 @@ So perhaps it's a good strategy to be very careful before applying to the most f
 </p>
 
 <p>
-At least with big corporations, you more or less know what you are signing for. Like <a href="https://www.instagram.com/reels/DSAt_AmDCIB/" target="_blank">Žižek</a> beautifully describes how today, one not only needs to stomach situations and do things because one needs to do them, but is also, in a perverse way, made to like the things one dislikes. Ideology today does not only force us to comply, it also demands that we enjoy it. Work harder for passion. Sacrifice for science. Accept stress as privilege. The system does not only want performance — it wants identification. Isn't it that if you work for universities, long hours, no work life balance mostly, for the "sake of science", you "have to like it" compared to corporations, where you click in at 9 and click out at 17h and at least you know that's it, and you have a life in the morning and evening?
+At least with big corporations, you more or less know what you are signing for. Like <a href="https://www.instagram.com/reels/DSAt_AmDCIB/" target="_blank">&#381;i&#382;ek</a> beautifully describes how today, one not only needs to stomach situations and do things because one needs to do them, but is also, in a perverse way, made to like the things one dislikes. Ideology today does not only force us to comply, it also demands that we enjoy it. Work harder for passion. Sacrifice for science. Accept stress as privilege. The system does not only want performance &mdash; it wants identification. Isn't it that if you work for universities, long hours, no work life balance mostly, for the "sake of science", you "have to like it" compared to corporations, where you click in at 9 and click out at 17h and at least you know that's it, and you have a life in the morning and evening?
 </p>
 
 <p>
-This whole sauna-closure charade — and the vomit-inducing arguments from ASVZ and ETH — made me think deeply about purpose in life. Society, techno-feudalism, and the entire machinery built around capital, profit, and performance optimization are slowly devouring whatever remains of our humanity.
+This whole sauna-closure charade &mdash; and the vomit-inducing arguments from ASVZ and ETH &mdash; made me think deeply about purpose in life. Society, techno-feudalism, and the entire machinery built around capital, profit, and performance optimization are slowly devouring whatever remains of our humanity.
 Yes, in life one has to function. One has to be pragmatic, productive, performant. But performance alone cannot be the meaning of existence. Performance fluctuates; it rises and falls. Machines are built for endless optimization. Human beings are not.
-A human life also needs beauty, freedom, slowness, chaos, uselessness, spontaneity — things that cannot always be justified through efficiency metrics or economic output. The moment every space, every action, every minute must prove its utility, something profoundly human begins to disappear.
+A human life also needs beauty, freedom, slowness, chaos, uselessness, spontaneity &mdash; things that cannot always be justified through efficiency metrics or economic output. The moment every space, every action, every minute must prove its utility, something profoundly human begins to disappear.
 </p>
 
 <p>
@@ -181,23 +153,22 @@ Ask, for example, about beauty, what is the purpose of beauty? Or ask yourself, 
 </p>
 
 <p>
-Fortunately (or unfortunately, however you look at it), the human condition is very complicated (diverse) and humans are the only animals that need to construct <a href="https://www.youtube.com/shorts/39ULy2m3RtM" target="_blank">meaning that counteracts the inevitableness and tragedy of death</a>. There are no easy solutions, also not in mostly <a href='https://www.goodreads.com/book/show/347852.The_Road_Less_Traveled' target=_new>right-wing recipes for discipline</a> and hard-core work ethics.
-In fact to <a href='https://youtube.com/watch?si=kHKNevkbJgP67eOK&v=8yfEHgvVmXM&feature=youtu.be' target=_new>live in creativity and meaningfully</a> also calls for a certain degree of chaos, spontaneity, expression via art, playfulness and most of all in a connected and kind way. At first look, all these aspects would never be funded in a grant.
+Fortunately (or unfortunately, however you look at it), the human condition is very complicated (diverse) and humans are the only animals that need to construct <a href="https://www.youtube.com/shorts/39ULy2m3RtM" target="_blank">meaning that counteracts the inevitableness and tragedy of death</a>. There are no easy solutions, also not in mostly <a href='https://www.goodreads.com/book/show/347852.The_Road_Less_Traveled' target="_new">right-wing recipes for discipline</a> and hard-core work ethics.
+In fact to <a href='https://youtube.com/watch?si=kHKNevkbJgP67eOK&v=8yfEHgvVmXM&feature=youtu.be' target="_new">live in creativity and meaningfully</a> also calls for a certain degree of chaos, spontaneity, expression via art, playfulness and most of all in a connected and kind way. At first look, all these aspects would never be funded in a grant.
 Beauty has no purpose in itself (at least no practical one). Yet, we often escape the meaninglessness of life via art, science and mostly: beauty. And I am tempted to say here that beauty plays a much much larger role in this "construction of sense" compared to performance optimization.
 </p>
 
 <p>
-I’m not sure if all of the above really answers the question, but to me the disappearance of the sauna feels symbolic: it is almost as if “doing nothing” — simply resting, being — has become unacceptable. The sauna, in that sense, is dangerous precisely because it legitimizes non-productivity. It also carries something else: a quiet form of beauty. And perhaps beauty itself is what becomes most threatening to the machinery of optimization, profit, and constant output.
-Maybe this is why even elite universities increasingly feel alien in a human sense. Not empty in activity — quite the opposite — but empty in connection. Lots of clicks, metrics, procedures, and outputs, but little relation to anything like intellectual or human essence. Increasingly, they resemble large bureaucratic corporations: heavily regulated, compliance-driven systems with an expanded HR logic, where the primary concern is not education, but management of performance.
-The implicit message is simple: perform, produce, publish, secure funding, keep the machine running. There is little space left for growth that is not instrumental, for curiosity that is not justified, for discovery that is not pre-assigned a purpose. Science, in its purest sense — exploration without predefined utility — becomes harder to recognize.
-And perhaps the most disturbing part is how this is wrapped in the language of meaning, freedom, and excellence. The contradiction is almost elegant. Institutions that present themselves as the guardians of knowledge increasingly operate in ways that drift away from it. In some cases, a large research department in a corporation can feel more “university-like” — in the sense of curiosity and exploration — than today’s so-called elite universities.</p>
+I&rsquo;m not sure if all of the above really answers the question, but to me the disappearance of the sauna feels symbolic: it is almost as if &ldquo;doing nothing&rdquo; &mdash; simply resting, being &mdash; has become unacceptable. The sauna, in that sense, is dangerous precisely because it legitimizes non-productivity. It also carries something else: a quiet form of beauty. And perhaps beauty itself is what becomes most threatening to the machinery of optimization, profit, and constant output.
+Maybe this is why even elite universities increasingly feel alien in a human sense. Not empty in activity &mdash; quite the opposite &mdash; but empty in connection. Lots of clicks, metrics, procedures, and outputs, but little relation to anything like intellectual or human essence. Increasingly, they resemble large bureaucratic corporations: heavily regulated, compliance-driven systems with an expanded HR logic, where the primary concern is not education, but management of performance.
+The implicit message is simple: perform, produce, publish, secure funding, keep the machine running. There is little space left for growth that is not instrumental, for curiosity that is not justified, for discovery that is not pre-assigned a purpose. Science, in its purest sense &mdash; exploration without predefined utility &mdash; becomes harder to recognize.
+And perhaps the most disturbing part is how this is wrapped in the language of meaning, freedom, and excellence. The contradiction is almost elegant. Institutions that present themselves as the guardians of knowledge increasingly operate in ways that drift away from it. In some cases, a large research department in a corporation can feel more &ldquo;university-like&rdquo; &mdash; in the sense of curiosity and exploration &mdash; than today&rsquo;s so-called elite universities.
+</p>
 
 <p>
-Think about it: who wouldn’t want meaningful work, serious research, sport, rest, culture, art, science — and, in general, a good life?
-
+Think about it: who wouldn&rsquo;t want meaningful work, serious research, sport, rest, culture, art, science &mdash; and, in general, a good life?
 Most people do want exactly that. And yet, through taxes and institutions, we often end up funding systems that seem structurally misaligned with it. Not necessarily because of bad intentions at the individual level, but because the machinery itself optimizes for something else.
-
-This is not limited to education or healthcare; it increasingly feels like a broader pattern across society. Elite universities, in particular, risk becoming corporate-like systems in academic disguise: publish, raise funds, climb rankings, optimize outputs. The language remains that of freedom, excellence, and progress — but the underlying incentives often point elsewhere.
+This is not limited to education or healthcare; it increasingly feels like a broader pattern across society. Elite universities, in particular, risk becoming corporate-like systems in academic disguise: publish, raise funds, climb rankings, optimize outputs. The language remains that of freedom, excellence, and progress &mdash; but the underlying incentives often point elsewhere.
 </p>
 
 <p>
@@ -216,33 +187,44 @@ Remember that not all that shines is gold, and "elite" many times just means an 
 So I would say (mostly to myself), beware which places you spend your limited time at. Don't be a fool. Don't be a robot. Forget the "elite". <a href='https://www.goodreads.com/quotes/626657-nobody-can-save-you-but-yourself-you-will-be-put' target="_new">Keep your soul.</a>
 </p>
 
-<p>The concept of the "sauna" is of a place without purpose, output and stress. It simply represents a place where you can just, well, be. Be. This is in strong contrast and conflict with living and functioning in service of an aparatus that uses you like a machine. "Only ever do anything if it has a purpose". To many people the concept of "just being" became completely foreign. Alien. They lost the ability to just be. They lost the ability to "do nothing". And they must always "perform", possibly in an optimal way, whatever that means. Because otherwise the big deep senselessness of death jumps at them. Anything is better than just being here, breathing, sitting still: <a href='https://youtu.be/xgZapTBHtnc?si=bNQo0awR7-CGo_m1&t=617' target=_new>this is me, here I am, I see the light, there is no purpose to it</a>. In the end I am going to die. So what? Let's relax and enjoy in the sauna.
+<p>The concept of the "sauna" is of a place without purpose, output and stress. It simply represents a place where you can just, well, be. Be. This is in strong contrast and conflict with living and functioning in service of an aparatus that uses you like a machine. "Only ever do anything if it has a purpose". To many people the concept of "just being" became completely foreign. Alien. They lost the ability to just be. They lost the ability to "do nothing". And they must always "perform", possibly in an optimal way, whatever that means. Because otherwise the big deep senselessness of death jumps at them. Anything is better than just being here, breathing, sitting still: <a href='https://youtu.be/xgZapTBHtnc?si=bNQo0awR7-CGo_m1&t=617' target="_new">this is me, here I am, I see the light, there is no purpose to it</a>. In the end I am going to die. So what? Let's relax and enjoy in the sauna.
 </p>
 
 <p>And that's, for the most part, why the sauna is gone.
 </p>
 
 <center style="margin: 12px 0;">
-<img src=img/sts1.jpg width=300 class="blog-img">
-<img src=img/sts2.jpg width=300 class="blog-img"><br>
-<p class="font-weight-light" style='font-size: 12px; color: #000000;'>Save the sauna fliers</a>
+<img src="img/sts1.jpg" width="300" class="blog-img">
+<img src="img/sts2.jpg" width="300" class="blog-img"><br>
+<span style='font-size: 12px; color: #666;'>Save the sauna fliers</span>
 </center>
 
-<br>Thanks for reading and if it was helpful to you, leave a comment below.
-  <br><br>
+    </div>
+
+    <div class="section" style="margin-top:56px;">
+      <div class="section-label"><i class="fas fa-layer-group"></i>More from the blog</div>
+      <div class="post-list compact">
+<div class="post-row"><div class="post-date">2026-09</div><div class="post-body"><a href="running_woodway_ftms.html">Running, Woodway and FTMS</a></div></div>
+<div class="post-row"><div class="post-date">2026-08</div><div class="post-body"><a href="couchers.html">Goodbye Couchsurfing, welcome Couchers</a></div></div>
+<div class="post-row"><div class="post-date">2025-12</div><div class="post-body"><a href="start_web_dev.html">Start webdev with Python, Apache and Docker</a></div></div>
+<div class="post-row"><div class="post-date">2025-05</div><div class="post-body"><a href="pubscan.html">pubScan: Explore your scientific co-authorship network</a></div></div>
+<div class="post-row"><div class="post-date">2024-12</div><div class="post-body"><a href="whats_out_there.html">Kaj je tam zunaj? Whats out there? 366 days, 366 posts</a></div></div>
+<div class="post-row"><div class="post-date">2023-01</div><div class="post-body"><a href="splicekit.html">splicekit: a comprehensive platform for differential splicing analysis of short-read RNA-seq data</a></div></div>
+<div class="post-row"><div class="post-date">2022-07</div><div class="post-body"><a href="ef.html">Erich Fromm: To Have or to Be?</a></div></div>
+<div class="post-row"><div class="post-date">2022-01</div><div class="post-body"><a href="mysql_binary.html">Mysql insert binary data from TAB files</a></div></div>
+<div class="post-row"><div class="post-date">2021-08</div><div class="post-body"><a href="fm.html">Fifth-metatarsal Fracture, a transformative lesson</a></div></div>
+<div class="post-row"><div class="post-date">2021-05</div><div class="post-body"><a href="js_href_onclick.html">Javascript functions and links</a></div></div>
+      </div>
+    </div>
 
     <div id="disqus_thread"></div>
     <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
     var disqus_config = function () {
     this.page.title = "STS";
     this.page.url = "https://grexor.github.io/sts.html";
     this.page.identifier = "blog_sts";
     };
-    (function() { // DON'T EDIT BELOW THIS LINE
+    (function() {
     var d = document, s = d.createElement('script');
     s.src = 'https://grexor.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
@@ -251,38 +233,25 @@ So I would say (mostly to myself), beware which places you spend your limited ti
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-  </div>
+  </main>
 
-  <div class='footer' style='padding-top: 10px; margin-top: 10px; padding-bottom: 20px; border-top: 1px dashed lightgray'>
-    <center>
+</div>
 
-      <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
-      &nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
-    </center>
-  </div>
+<footer class="site-footer">
+  <center>
+    <div class="footer-quote">When in doubt, remember: <a href="https://www.goodreads.com/book/show/287059.The_Situation_Is_Hopeless_But_Not_Serious" target="_blank">the situation is hopeless, but not serious</a>. Creativity is not a talent, <a href="pacman.html">stay playful</a>.</div>
+    <a href="https://bsky.app/profile/grexor.bsky.social"><i class="fab fa-bluesky"></i>&nbsp;Follow me on Bluesky</a>
+    &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gregorrot"><i class="fab fa-linkedin"></i>&nbsp;Connect on LinkedIn</a>
+  </center>
+</footer>
 
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
-  <script>
-    var lb    = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lightbox-img');
+<script src="assets/site.js"></script>
 
-    document.querySelectorAll('img.blog-img').forEach(function(img) {
-      img.addEventListener('click', function() {
-        lbImg.src = img.src;
-        lb.classList.add('open');
-      });
-    });
-
-    function close() { lb.classList.remove('open'); lbImg.src = ''; }
-    lb.addEventListener('click', close);
-    document.getElementById('lightbox-close').addEventListener('click', close);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
-  </script>
-
-  </body>
-  </html>
+</body>
+</html>
