@@ -269,7 +269,7 @@ a.bsky-card:hover { border-color: var(--accent); transform: translateY(-2px); bo
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-.bsky-img { width: 100%; max-height: 120px; object-fit: cover; border-radius: 8px; display: block; }
+.bsky-img { width: 100%; object-fit: cover; border-radius: 8px; display: block; }
 
 /* Writing / blog list */
 .post-list { display: flex; flex-direction: column; }
