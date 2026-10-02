@@ -37,7 +37,7 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
   if (!feed) return;
 
   var HANDLE = 'grexor.bsky.social';
-  var API = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=' + HANDLE + '&limit=4&filter=posts_no_replies';
+  var API = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=' + HANDLE + '&limit=15&filter=posts_no_replies';
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -104,7 +104,10 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
         return r.json();
       })
       .then(function (data) {
-        var posts = (data.feed || []).slice(0, 2).map(function (item) { return item.post; });
+        var posts = (data.feed || [])
+          .filter(function (item) { return !item.reason; }) // drop reposts
+          .slice(0, 2)
+          .map(function (item) { return item.post; });
         if (!posts.length) throw new Error('no posts');
         settled = true;
         renderPosts(posts);
