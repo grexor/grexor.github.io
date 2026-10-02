@@ -31,64 +31,56 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
   });
 });
 
-// Latest Bluesky posts (fetched client-side from Bluesky's public read-only API)
+// Latest Bluesky posts — find the latest original posts via Bluesky's
+// public read-only API, then render them with Bluesky's own official
+// embed widget (https://embed.bsky.app), visually scaled down 10% (see
+// .bsky-grid iframe in style.css). That transform shrinks the rendering
+// only, not the box it's allotted, so the widget's own resize messages
+// (which report its *real*, unscaled content height) are intercepted
+// here and applied — already scaled — to the wrapper, instead of letting
+// the embed script apply them to the iframe at full size.
 (function () {
   var feed = document.getElementById('bsky-feed');
   if (!feed) return;
 
   var HANDLE = 'grexor.bsky.social';
   var API = 'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=' + HANDLE + '&limit=15&filter=posts_no_replies';
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-
-  function timeAgo(iso) {
-    var diff = (Date.now() - new Date(iso).getTime()) / 1000;
-    var units = [[31536000, 'y'], [2592000, 'mo'], [86400, 'd'], [3600, 'h'], [60, 'm']];
-    for (var i = 0; i < units.length; i++) {
-      var v = Math.floor(diff / units[i][0]);
-      if (v >= 1) return v + units[i][1] + ' ago';
-    }
-    return 'just now';
-  }
-
-  function postUrl(uri, handle) {
-    return 'https://bsky.app/profile/' + handle + '/post/' + uri.split('/').pop();
-  }
+  var EMBED_SCRIPT = 'https://embed.bsky.app/static/embed.js';
+  var EMBED_ORIGIN = 'https://embed.bsky.app';
+  var SCALE = 0.9;
 
   function renderError(err) {
     if (err) console.error('Bluesky feed:', err);
     feed.innerHTML =
-      '<a class="bsky-card bsky-error" href="https://bsky.app/profile/' + HANDLE + '" target="_blank">' +
+      '<a class="bsky-error" href="https://bsky.app/profile/' + HANDLE + '" target="_blank">' +
       'Couldn&rsquo;t load latest posts &mdash; view profile on Bluesky &rarr;</a>';
   }
 
-  function renderPosts(posts) {
-    feed.innerHTML = posts.map(function (post) {
-      var text = escapeHtml((post.record && post.record.text) || '');
+  function loadEmbedScript(cb) {
+    if (window.bluesky && typeof window.bluesky.scan === 'function') { cb(); return; }
+    var s = document.createElement('script');
+    s.src = EMBED_SCRIPT;
+    s.async = true;
+    s.onload = cb;
+    s.onerror = function () { renderError('embed.js failed to load'); };
+    document.body.appendChild(s);
+  }
 
-      var img = '';
-      if (post.embed && post.embed.images && post.embed.images.length) {
-        img = '<img class="bsky-img" src="' + post.embed.images[0].thumb + '" alt="' + escapeHtml(post.embed.images[0].alt || '') + '">';
-      }
+  // Bluesky's embed.js listens for the same message and sets the
+  // iframe's own (unscaled) height; this mirrors the scaled height onto
+  // the surrounding card so there's no blank space below the shrunk post.
+  window.addEventListener('message', function (event) {
+    if (event.origin !== EMBED_ORIGIN || !event.data || !event.data.id || !event.data.height) return;
+    var iframe = feed.querySelector('[data-bluesky-id="' + event.data.id + '"]');
+    var wrap = iframe && iframe.closest('.bluesky-embed');
+    if (wrap) wrap.style.height = (event.data.height * SCALE) + 'px';
+  });
 
-      return '' +
-        '<a class="bsky-card" href="' + postUrl(post.uri, post.author.handle) + '" target="_blank" rel="noopener">' +
-          '<div class="bsky-head">' +
-            '<img class="bsky-avatar" src="' + post.author.avatar + '" alt="">' +
-            '<div>' +
-              '<div class="bsky-name">' + escapeHtml(post.author.displayName || post.author.handle) + '</div>' +
-              '<div class="bsky-handle">@' + escapeHtml(post.author.handle) + '</div>' +
-            '</div>' +
-            '<div class="bsky-date">' + timeAgo(post.indexedAt) + '</div>' +
-          '</div>' +
-          '<div class="bsky-text">' + text + '</div>' +
-          img +
-        '</a>';
+  function renderPosts(uris) {
+    feed.innerHTML = uris.map(function (uri) {
+      return '<div data-bluesky-uri="' + uri + '"></div>';
     }).join('');
+    loadEmbedScript(function () { window.bluesky.scan(feed); });
   }
 
   // Belt-and-suspenders timeout: if the request hangs (blocked by an
@@ -104,13 +96,13 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
         return r.json();
       })
       .then(function (data) {
-        var posts = (data.feed || [])
+        var uris = (data.feed || [])
           .filter(function (item) { return !item.reason; }) // drop reposts
-          .slice(0, 2)
-          .map(function (item) { return item.post; });
-        if (!posts.length) throw new Error('no posts');
+          .slice(0, 3)
+          .map(function (item) { return item.post.uri; });
+        if (!uris.length) throw new Error('no posts');
         settled = true;
-        renderPosts(posts);
+        renderPosts(uris);
       })
       .catch(function (err) {
         settled = true;
