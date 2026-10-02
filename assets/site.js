@@ -69,7 +69,6 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
   function renderPosts(posts) {
     feed.innerHTML = posts.map(function (post) {
       var text = escapeHtml((post.record && post.record.text) || '');
-      if (text.length > 160) text = text.slice(0, 160).trim() + '&hellip;';
 
       var img = '';
       if (post.embed && post.embed.images && post.embed.images.length) {

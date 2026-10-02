@@ -231,11 +231,13 @@ a:hover { text-decoration: underline; }
 .card p { font-size: 13.5px; color: var(--muted); margin: 0; }
 
 /* Bluesky feed */
+.bsky-grid { align-items: start; }
 .bsky-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 14px;
+  height: 200px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -254,7 +256,7 @@ a.bsky-card:hover { border-color: var(--accent); transform: translateY(-2px); bo
   color: var(--muted);
 }
 .bsky-card.bsky-error { grid-column: 1 / -1; }
-.bsky-head { display: flex; align-items: center; gap: 8px; }
+.bsky-head { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .bsky-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .bsky-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
 .bsky-handle { font-size: 12px; color: var(--muted); line-height: 1.3; }
@@ -264,12 +266,11 @@ a.bsky-card:hover { border-color: var(--accent); transform: translateY(-2px); bo
   line-height: 1.5;
   color: var(--text);
   white-space: pre-wrap;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
 }
-.bsky-img { width: 100%; object-fit: cover; border-radius: 8px; display: block; }
+.bsky-img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; display: block; flex-shrink: 0; }
 
 /* Writing / blog list */
 .post-list { display: flex; flex-direction: column; }
