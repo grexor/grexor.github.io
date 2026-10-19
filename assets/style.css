@@ -492,14 +492,21 @@ footer.site-footer .fa-bluesky, footer.site-footer .fa-linkedin { margin-right: 
 #lightbox-close:hover { opacity: 1; }
 
 @media (max-width: 900px) {
-  .layout { flex-direction: column; }
+  /* .layout's align-items:flex-start is meant for the desktop row layout
+     (stop .main stretching to the sidebar's height); once flex-direction
+     flips to column here, the cross axis becomes horizontal and that same
+     property stops .main from stretching to full width instead — it was
+     shrink-to-fit sizing against its own content (e.g. an unwrapped code
+     line) up to its 960px max-width, well past the actual phone viewport.
+     Reset to stretch, and pin the width explicitly as a second safety net. */
+  .layout { flex-direction: column; align-items: stretch; }
   .sidebar { position: static; height: auto; width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
   .side-nav { flex-direction: row; flex-wrap: wrap; gap: 14px; }
   .side-nav a { border-left: none; padding-left: 0; border-bottom: 2px solid transparent; }
   .side-nav a:hover { border-left: none; border-bottom-color: var(--accent); }
   .card-grid { grid-template-columns: 1fr; }
   .split-two { grid-template-columns: 1fr; }
-  .main { padding: 44px 24px 70px 24px; }
+  .main { width: 100%; max-width: 100%; padding: 44px 24px 70px 24px; box-sizing: border-box; }
   .page-title { font-size: 26px; }
 }
 
