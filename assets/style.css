@@ -31,9 +31,17 @@
   }
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* stop mobile browsers auto-"boosting" text size in narrow columns
+     (most noticeable in code blocks) — it inflates fonts unpredictably
+     and can push otherwise-fine content wider than the viewport */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: 'IBM Plex Sans', sans-serif;
@@ -340,7 +348,7 @@ footer.site-footer .fa-bluesky, footer.site-footer .fa-linkedin { margin-right: 
 }
 .page-title a { color: inherit; }
 
-.post-content { font-size: 16px; line-height: 1.75; color: var(--text); font-weight: 300; }
+.post-content { font-size: 16px; line-height: 1.75; color: var(--text); font-weight: 300; overflow-wrap: break-word; }
 .post-content p { margin: 0 0 1em 0; }
 .post-content b { font-weight: 600; }
 .post-content ul { padding-left: 22px; margin: 0 0 1em 0; }
@@ -351,11 +359,14 @@ footer.site-footer .fa-bluesky, footer.site-footer .fa-linkedin { margin-right: 
 
 .post-content pre {
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--code-bg);
   border-radius: 10px;
   padding: 18px 20px;
   margin: 22px 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: none;
 }
 .post-content pre code {
