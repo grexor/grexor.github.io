@@ -446,6 +446,9 @@ footer.site-footer .fa-bluesky, footer.site-footer .fa-linkedin { margin-right: 
 /* image lightbox (shared across all post pages) */
 .blog-img { cursor: zoom-in; transition: opacity 0.15s; border-radius: 10px; }
 .blog-img:hover { opacity: 0.85; }
+
+/* a few posts float a small captioned image beside the text (couchers.html) */
+.float-figure { float: right; width: 220px; margin: 4px 0 12px 18px; }
 #lightbox {
   display: none;
   position: fixed;
@@ -487,4 +490,15 @@ footer.site-footer .fa-bluesky, footer.site-footer .fa-linkedin { margin-right: 
   .split-two { grid-template-columns: 1fr; }
   .main { padding: 44px 24px 70px 24px; }
   .page-title { font-size: 26px; }
+}
+
+@media (max-width: 480px) {
+  /* a few older posts size images with a fixed width/height attribute or
+     inline style (width="300", height:260px, max-width:380px, ...) that
+     doesn't shrink on its own — force every post image to stay inside
+     its column on narrow phones instead of overflowing it. */
+  .blog-img { max-width: 100% !important; width: auto !important; height: auto !important; }
+  /* the couchers.html float figures are too wide to float next to text
+     on a phone-sized column — stack them full-width instead. */
+  .float-figure { float: none; width: 100%; margin: 18px 0; }
 }
