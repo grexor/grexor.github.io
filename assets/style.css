@@ -246,7 +246,7 @@ a:hover { text-decoration: underline; }
    widened pre-scale so it still lands at 100% of the column post-scale,
    and site.js mirrors the (scaled) height onto the wrapper using the
    real height Bluesky's widget reports, so there's no leftover gap. */
-.bsky-grid { grid-template-columns: repeat(3, minmax(0, 270px)); align-items: start; }
+.bsky-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
 .bsky-loading, .bsky-error {
   display: block;
   padding: 24px;
